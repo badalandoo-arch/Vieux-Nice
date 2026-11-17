@@ -1,0 +1,1058 @@
+```html
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découvrir le Vieux Nice & ses Alentours | Guide des Voyageurs</title>
+    <!-- Chargement de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chargement de Google Fonts : Inter et Playfair Display pour une touche éditoriale méditerranéenne -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- Chargement de FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        azur: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            800: '#0c4a6e',
+                            900: '#082f49',
+                        },
+                        ocre: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        sienne: {
+                            50: '#fdf4f2',
+                            100: '#fbe6e1',
+                            500: '#c2593f',
+                            600: '#a8442c',
+                            700: '#8a3521',
+                        },
+                        sable: '#faf8f5'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Styles personnalisés subtils pour les transitions et la barre de défilement */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .card-hover {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(12, 74, 110, 0.08), 0 8px 10px -6px rgba(12, 74, 110, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-sable text-slate-800 antialiased selection:bg-azur-600 selection:text-white">
+
+    <!-- Barre de Navigation Sticky -->
+    <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-stone-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo / Titre -->
+                <a href="#" class="flex items-center space-x-2.5 group">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-azur-600 to-azur-800 flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-sun text-ocre-400 text-sm"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-lg text-azur-900 tracking-tight">Vieux Nice</span>
+                        <span class="hidden sm:inline-block text-xs font-medium text-sienne-600 uppercase tracking-wider ml-1.5 px-2 py-0.5 bg-sienne-50 rounded-full">Guide Local</span>
+                    </div>
+                </a>
+
+                <!-- Liens de navigation rapide (Desktop) -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#explorer" class="hover:text-azur-700 transition-colors">Explorer les lieux</a>
+                    <a href="#itineraires" class="hover:text-azur-700 transition-colors">Itinéraires à pied</a>
+                    <a href="#conseils" class="hover:text-azur-700 transition-colors">Conseils pratiques</a>
+                </div>
+
+                <!-- Bouton Mon Carnet de Visite (Favoris) -->
+                <button id="open-favorites-btn" class="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sienne-50 hover:bg-sienne-100 text-sienne-700 font-medium text-sm transition-all border border-sienne-200/70 shadow-sm active:scale-95">
+                    <i class="fa-solid fa-heart text-sienne-500"></i>
+                    <span>Mon carnet</span>
+                    <span id="favorites-count" class="inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-sienne-600 rounded-full">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Section En-tête (Hero) Méditerranéenne -->
+    <header class="relative overflow-hidden bg-azur-900 text-white">
+        <!-- Image de fond avec superposition dégradée aux teintes azur et terre de Sienne -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1533614767277-87853d54cfa0?auto=format&fit=crop&w=2000&q=80" 
+                 alt="Vue panoramique sur les toits ocres du Vieux Nice et la Baie des Anges" 
+                 onerror="this.src='https://placehold.co/1920x800/0c4a6e/ffffff?text=Vieux+Nice+%26+Baie+des+Anges'"
+                 class="w-full h-full object-cover object-center opacity-45 scale-105">
+            <div class="absolute inset-0 bg-gradient-to-r from-azur-900/95 via-azur-900/75 to-sienne-700/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-sable via-transparent to-transparent"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 sm:pt-24 sm:pb-32">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-ocre-100 text-xs sm:text-sm font-medium mb-6">
+                    <i class="fa-solid fa-compass text-ocre-400"></i>
+                    <span>Bienvenue sur la Côte d'Azur • Tout est accessible à pied</span>
+                </div>
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
+                    L'âme authentique du <span class="text-ocre-400 italic">Vieux Nice</span> & ses trésors voisins
+                </h1>
+                <p class="text-base sm:text-lg text-azur-50/90 leading-relaxed mb-8 max-w-2xl">
+                    Ruelles baroques aux façades ocre et terre de Sienne, marchés parfumés aux fleurs et aux épices, panoramas vertigineux sur la Baie des Anges : découvrez notre sélection d'incontournables à moins de 15 minutes de marche.
+                </p>
+                <div class="flex flex-wrap gap-3 sm:gap-4">
+                    <a href="#explorer" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sienne-500 hover:bg-sienne-600 text-white font-semibold text-sm sm:text-base shadow-lg shadow-sienne-900/30 transition-all">
+                        <span>Explorer les activités</span>
+                        <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                    <a href="#itineraires" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/15 hover:bg-white/25 backdrop-blur-md text-white border border-white/30 font-semibold text-sm sm:text-base transition-all">
+                        <i class="fa-solid fa-route text-ocre-400"></i>
+                        <span>Itinéraires à pied</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Indicateurs clés rapides -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-12 pt-8 border-t border-white/15 max-w-4xl">
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
+                    <div class="text-2xl font-bold text-ocre-400">100%</div>
+                    <div class="text-xs sm:text-sm text-azur-100 mt-0.5">Accessible à pied</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
+                    <div class="text-2xl font-bold text-white">12 lieux</div>
+                    <div class="text-xs sm:text-sm text-azur-100 mt-0.5">Sélectionnés pour vous</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
+                    <div class="text-2xl font-bold text-ocre-400">2 min</div>
+                    <div class="text-xs sm:text-sm text-azur-100 mt-0.5">Des plages & du Cours Saleya</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
+                    <div class="text-2xl font-bold text-white">3 parcours</div>
+                    <div class="text-xs sm:text-sm text-azur-100 mt-0.5">Clés en main</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Principale : Filtres, Recherche et Grille d'Activités -->
+    <main id="explorer" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10 pb-20">
+        
+        <!-- 2 & 3. Panneau de Recherche et Filtres Interactifs -->
+        <section aria-label="Filtres des activités" class="bg-white rounded-3xl shadow-xl shadow-slate-200/60 border border-stone-200/80 p-5 sm:p-7 mb-10">
+            
+            <!-- Barre de recherche & Filtre temps de marche -->
+            <div class="flex flex-col lg:flex-row gap-4 justify-between items-stretch lg:items-center pb-6 border-b border-stone-100">
+                <!-- Recherche par mot-clé -->
+                <div class="relative flex-1 max-w-xl">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="search-input" 
+                           placeholder="Rechercher un lieu, une spécialité (ex: socca, plage, cascade, marché)..." 
+                           class="w-full pl-11 pr-10 py-3 rounded-xl bg-sable border border-stone-200 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-azur-500 focus:bg-white transition-all">
+                    <button id="clear-search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1" title="Effacer la recherche">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Filtre par temps de marche depuis le Vieux Nice -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 mr-1 flex items-center gap-1.5">
+                        <i class="fa-solid fa-person-walking text-azur-600 text-sm"></i> Distance :
+                    </span>
+                    <div id="walk-filters" class="inline-flex flex-wrap gap-1.5">
+                        <button data-walk="all" class="walk-btn active px-3.5 py-2 rounded-xl text-xs font-semibold bg-azur-700 text-white transition-all">
+                            Toutes distances
+                        </button>
+                        <button data-walk="sur-place" class="walk-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-sable text-slate-600 hover:bg-stone-200/70 transition-all">
+                            Sur place (0 min)
+                        </button>
+                        <button data-walk="moins-5" class="walk-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-sable text-slate-600 hover:bg-stone-200/70 transition-all">
+                            &lt; 5 min
+                        </button>
+                        <button data-walk="5-15" class="walk-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-sable text-slate-600 hover:bg-stone-200/70 transition-all">
+                            5 - 15 min
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtres par Catégorie -->
+            <div class="pt-5">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Catégories d'activités</span>
+                    <span id="results-counter" class="text-xs font-medium text-azur-700 bg-azur-50 px-2.5 py-1 rounded-full">12 activités affichées</span>
+                </div>
+                <div id="category-filters" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+                    <button data-category="all" class="cat-btn active shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium bg-sienne-600 text-white shadow-sm transition-all">
+                        <i class="fa-solid fa-layer-group"></i> Toutes
+                    </button>
+                    <button data-category="culture" class="cat-btn shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium bg-sable text-slate-700 hover:bg-ocre-50 hover:text-sienne-700 border border-stone-200/70 transition-all">
+                        <i class="fa-solid fa-landmark text-sienne-500"></i> Culture & Patrimoine
+                    </button>
+                    <button data-category="gastronomie" class="cat-btn shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium bg-sable text-slate-700 hover:bg-ocre-50 hover:text-sienne-700 border border-stone-200/70 transition-all">
+                        <i class="fa-solid fa-utensils text-ocre-500"></i> Gastronomie & Marchés
+                    </button>
+                    <button data-category="balades" class="cat-btn shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium bg-sable text-slate-700 hover:bg-ocre-50 hover:text-sienne-700 border border-stone-200/70 transition-all">
+                        <i class="fa-solid fa-camera-retro text-emerald-600"></i> Balades & Panoramas
+                    </button>
+                    <button data-category="plages" class="cat-btn shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium bg-sable text-slate-700 hover:bg-ocre-50 hover:text-sienne-700 border border-stone-200/70 transition-all">
+                        <i class="fa-solid fa-umbrella-beach text-azur-500"></i> Plages & Détente
+                    </button>
+                    <button data-category="shopping" class="cat-btn shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium bg-sable text-slate-700 hover:bg-ocre-50 hover:text-sienne-700 border border-stone-200/70 transition-all">
+                        <i class="fa-solid fa-bag-shopping text-purple-500"></i> Vie Nocturne & Shopping
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Grille des Cartes d'Activités -->
+        <div id="activities-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Les cartes sont générées dynamiquement en JavaScript -->
+        </div>
+
+        <!-- État vide si aucun résultat -->
+        <div id="empty-state" class="hidden text-center py-16 px-4 bg-white rounded-3xl border border-stone-200/80">
+            <div class="w-16 h-16 rounded-2xl bg-ocre-50 text-ocre-500 flex items-center justify-center mx-auto mb-4 text-2xl">
+                <i class="fa-solid fa-compass"></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-slate-800 mb-2">Aucune activité ne correspond à votre recherche</h3>
+            <p class="text-slate-500 text-sm max-w-md mx-auto mb-6">Essayez de modifier vos filtres de distance, de catégorie ou d'effacer votre mot-clé pour redécouvrir tous les trésors du Vieux Nice.</p>
+            <button id="reset-all-filters" class="px-5 py-2.5 rounded-xl bg-azur-700 hover:bg-azur-800 text-white text-sm font-semibold transition-colors">
+                Réinitialiser tous les filtres
+            </button>
+        </div>
+
+        <!-- 5. Section "Itinéraires suggérés à pied" -->
+        <section id="itineraires" class="mt-24 pt-12 border-t border-stone-200/80">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-sienne-600 bg-sienne-50 px-3 py-1 rounded-full">Parcours clés en main</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-azur-900 mt-3 mb-4">Itinéraires suggérés à pied</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Suivez nos boucles pédestres testées et approuvées au départ du cœur du Vieux Nice, sans jamais avoir besoin de prendre la voiture.</p>
+            </div>
+
+            <!-- Onglets Interactifs d'Itinéraires -->
+            <div class="bg-white rounded-3xl shadow-lg shadow-slate-200/50 border border-stone-200/80 overflow-hidden">
+                <!-- Boutons d'onglets -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 border-b border-stone-200 bg-sable/60">
+                    <button data-tab="matinee" class="itinerary-tab active flex items-center justify-center gap-3 p-4 sm:p-5 text-left border-b-2 border-sienne-600 bg-white text-azur-900 font-semibold transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-ocre-100 text-ocre-600 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold">Matinée Gourmande</div>
+                            <div class="text-xs text-slate-500 font-normal">Durée : ~2h30 • Facile</div>
+                        </div>
+                    </button>
+                    <button data-tab="sunset" class="itinerary-tab flex items-center justify-center gap-3 p-4 sm:p-5 text-left border-b-2 border-transparent text-slate-600 hover:bg-white/60 font-semibold transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-sienne-100 text-sienne-600 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold">Panoramas & Coucher de Soleil</div>
+                            <div class="text-xs text-slate-500 font-normal">Durée : ~2h00 • Quelques marches</div>
+                        </div>
+                    </button>
+                    <button data-tab="journee" class="itinerary-tab flex items-center justify-center gap-3 p-4 sm:p-5 text-left border-b-2 border-transparent text-slate-600 hover:bg-white/60 font-semibold transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-azur-100 text-azur-600 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold">L'Essentiel en 1 Journée</div>
+                            <div class="text-xs text-slate-500 font-normal">Durée : Journée complète</div>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Contenu des Onglets -->
+                <div id="itinerary-content" class="p-6 sm:p-10">
+                    <!-- Rempli dynamiquement via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Section "Conseils pratiques" -->
+        <section id="conseils" class="mt-24">
+            <div class="bg-gradient-to-br from-azur-900 via-azur-800 to-azur-900 rounded-3xl p-6 sm:p-12 text-white shadow-xl relative overflow-hidden">
+                <!-- Décoration subtile -->
+                <div class="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-ocre-400/10 blur-2xl pointer-events-none"></div>
+                <div class="absolute -left-20 -bottom-20 w-72 h-72 rounded-full bg-sienne-500/15 blur-2xl pointer-events-none"></div>
+
+                <div class="relative z-10">
+                    <div class="max-w-2xl mb-10">
+                        <span class="text-xs font-bold uppercase tracking-widest text-ocre-400">Infos Utiles Voyageurs</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2 mb-3">Conseils pratiques pour votre séjour</h2>
+                        <p class="text-azur-100 text-sm sm:text-base">Nos astuces d'initiés pour profiter de Nice comme un local et éviter les pièges touristiques.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Carte Conseil 1 : Transports -->
+                        <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6">
+                            <div class="w-12 h-12 rounded-xl bg-azur-500/30 border border-azur-400/30 flex items-center justify-center text-ocre-400 text-xl mb-4">
+                                <i class="fa-solid fa-train-tram"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold mb-2.5">Transports & Tramway</h3>
+                            <ul class="space-y-2.5 text-sm text-azur-50/90">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-ocre-400 mt-1 text-xs"></i>
+                                    <span><strong>Ligne L1 :</strong> Arrêts <em>Opéra - Vieille Ville</em> ou <em>Cathédrale - Vieille Ville</em> au pied du quartier (vers Gare SNCF & Libération).</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-ocre-400 mt-1 text-xs"></i>
+                                    <span><strong>Ligne L2 :</strong> Arrêt <em>Garibaldi / Le Château</em> pour rejoindre directement l'Aéroport Nice Côte d'Azur en 25 min.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-ocre-400 mt-1 text-xs"></i>
+                                    <span><strong>Astuce :</strong> Achetez la carte rechargeable <em>La Carte</em> aux bornes des stations (1,70 € le trajet).</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Carte Conseil 2 : Meilleurs moments -->
+                        <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6">
+                            <div class="w-12 h-12 rounded-xl bg-sienne-500/30 border border-sienne-400/30 flex items-center justify-center text-ocre-400 text-xl mb-4">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold mb-2.5">Meilleurs moments</h3>
+                            <ul class="space-y-2.5 text-sm text-azur-50/90">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-ocre-400 mt-1 text-xs"></i>
+                                    <span><strong>Marché du Cours Saleya :</strong> Venez avant 10h00 pour profiter des étals fleuris et des producteurs locaux au calme.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-ocre-400 mt-1 text-xs"></i>
+                                    <span><strong>Colline du Château :</strong> Privilégiez la fin d'après-midi (1h avant le coucher du soleil) pour une lumière dorée magique.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-ocre-400 mt-1 text-xs"></i>
+                                    <span><strong>Lundi au Cours Saleya :</strong> Pas de marché alimentaire, place à la célèbre brocante et aux antiquaires !</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Carte Conseil 3 : Spécialités à goûter -->
+                        <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6">
+                            <div class="w-12 h-12 rounded-xl bg-ocre-500/30 border border-ocre-400/30 flex items-center justify-center text-ocre-400 text-xl mb-4">
+                                <i class="fa-solid fa-bowl-food"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold mb-2.5">Spécialités à goûter</h3>
+                            <ul class="space-y-2.5 text-sm text-azur-50/90">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-ocre-400 mt-1 text-xs"></i>
+                                    <span><strong>La Socca :</strong> Galette de farine de pois chiches cuite au feu de bois, à déguster brûlante et poivrée sur le pouce.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-ocre-400 mt-1 text-xs"></i>
+                                    <span><strong>Le Pan Bagnat :</strong> Le véritable sandwich niçois (thon, crudités, œuf dur, olives de Nice, huile d'olive, jamais de mayonnaise !).</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-ocre-400 mt-1 text-xs"></i>
+                                    <span><strong>Pissaladière & Tourte de blettes :</strong> L'une salée aux oignons confits et anchois, l'autre sucrée aux pignons et raisins secs.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="bg-white border-t border-stone-200 py-10 text-center text-sm text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-center gap-2 font-serif font-bold text-azur-900 text-lg mb-2">
+                <i class="fa-solid fa-sun text-ocre-500"></i>
+                <span>Guide du Vieux Nice</span>
+            </div>
+            <p class="max-w-md mx-auto text-xs text-slate-400">Conçu avec soin pour accompagner vos découvertes à pied au cœur de Nissa la Bella.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Détail d'une Activité -->
+    <div id="activity-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm transition-opacity">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-stone-200 relative animate-fadeIn">
+            <button id="close-activity-modal" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-slate-800 shadow-md flex items-center justify-center transition-transform hover:scale-105">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="activity-modal-body">
+                <!-- Contenu injecté dynamiquement -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Tiroir (Drawer) "Mon Carnet de Visite" (Favoris) -->
+    <div id="favorites-drawer" class="fixed inset-0 z-50 hidden justify-end bg-slate-900/50 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between overflow-hidden">
+            <!-- En-tête du tiroir -->
+            <div class="p-6 border-b border-stone-200 flex items-center justify-between bg-sable">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-sienne-100 text-sienne-600 flex items-center justify-center">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-azur-900">Mon carnet de visite</h3>
+                        <p class="text-xs text-slate-500">Vos coups de cœur sauvegardés</p>
+                    </div>
+                </div>
+                <button id="close-favorites-drawer" class="w-9 h-9 rounded-full bg-white hover:bg-stone-100 text-slate-600 flex items-center justify-center border border-stone-200">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Liste des favoris -->
+            <div id="favorites-list" class="flex-1 overflow-y-auto p-6 space-y-4">
+                <!-- Rempli dynamiquement -->
+            </div>
+
+            <!-- Pied du tiroir avec bouton copier la sélection -->
+            <div class="p-5 border-t border-stone-200 bg-sable space-y-3">
+                <button id="copy-favorites-btn" class="w-full py-3 px-4 rounded-xl bg-azur-700 hover:bg-azur-800 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-colors shadow-sm">
+                    <i class="fa-regular fa-copy"></i>
+                    <span>Copier ma liste de visite</span>
+                </button>
+                <div id="copy-feedback" class="hidden text-center text-xs font-medium text-emerald-700 bg-emerald-50 py-1.5 rounded-lg border border-emerald-200">
+                    <i class="fa-solid fa-check mr-1"></i> Liste copiée dans le presse-papiers !
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Principal de l'Application -->
+    <script>
+        // Base de données complète des 12 activités autour du Vieux Nice
+        const activitiesData = [
+            {
+                id: 'cours-saleya',
+                title: 'Cours Saleya & Marché aux Fleurs',
+                category: 'gastronomie',
+                categoryLabel: 'Gastronomie & Marchés',
+                walkCategory: 'sur-place',
+                walkTime: 'Sur place (1 min)',
+                image: 'https://images.unsplash.com/photo-1555992336-fb0d29498b13?auto=format&fit=crop&w=900&q=80',
+                fallback: 'https://placehold.co/800x500/d97706/ffffff?text=Cours+Saleya',
+                shortDesc: 'Le cœur battant et parfumé du Vieux Nice : marché aux fleurs et produits provençaux du mardi au dimanche, brocante le lundi.',
+                fullDesc: 'Classé parmi les marchés d’exception en France, le Cours Saleya est une explosion de couleurs et de senteurs méditerranéennes. Bordé de façades ocres et de terrasses animées, il accueille chaque matin les producteurs locaux (fleurs coupées, fruits confits, olives, épices) et se transforme le lundi en un vaste marché à la brocante.',
+                highlights: ['Marché aux fleurs & producteurs (Mar-Dim, 6h-13h30)', 'Brocante & antiquités tous les lundis', 'Terrasses de cafés animées en soirée'],
+                tip: 'Goûtez les fruits confits de la Maison Auer située juste en face de l’Opéra, à l’extrémité ouest du Cours.',
+                address: 'Cours Saleya, 06300 Nice'
+            },
+            {
+                id: 'colline-chateau',
+                title: 'Parc de la Colline du Château',
+                category: 'balades',
+                categoryLabel: 'Balades & Panoramas',
+                walkCategory: 'moins-5',
+                walkTime: '4 min à pied',
+                image: 'https://images.unsplash.com/photo-1533614767277-87853d54cfa0?auto=format&fit=crop&w=900&q=80',
+                fallback: 'https://placehold.co/800x500/0369a1/ffffff?text=Colline+du+Chateau',
+                shortDesc: 'Le plus beau panorama à 360° sur les toits du Vieux Nice, la Baie des Anges et le Port Lympia, avec sa célèbre cascade.',
+                fullDesc: 'Véritable poumon vert surplombant la ville à 92 mètres d’altitude, le Parc de la Colline du Château offre des points de vue spectaculaires. Bien que la forteresse ait été détruite au XVIIIe siècle, le parc abrite une impressionnante cascade artificielle, des vestiges archéologiques, des aires de jeux ombragées et des belvédères inoubliables.',
+                highlights: ['Belvédère sur la Baie des Anges et les toits ocres', 'La grande Cascade rafraîchissante', 'Ascenseur gratuit (rue des Ponchettes) ou escaliers Lesage'],
+                tip: 'Montez par l’ascenseur gratuit côté mer et redescendez à pied côté Port Lympia ou place Garibaldi pour varier les paysages.',
+                address: 'Montée du Château, 06300 Nice'
+            },
+            {
+                id: 'promenade-anglais',
+                title: 'Promenade des Anglais & Plages',
+                category: 'plages',
+                categoryLabel: 'Plages & Détente',
+                walkCategory: 'moins-5',
+                walkTime: '2 min à pied',
+                image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80',
+                fallback: 'https://placehold.co/800x500/0284c7/ffffff?text=Promenade+des+Anglais',
+                shortDesc: 'Flânerie mythique sur les célèbres chaises bleues le long du Quai des États-Unis et baignade dans les eaux turquoise.',
+                fullDesc: 'À quelques pas des ruelles ombragées du Vieux Nice s’ouvre la mer Méditerranée. Le Quai des États-Unis prolonge la célèbre Promenade des Anglais jusqu’au pied de la Colline du Château. Alternez entre baignade sur les plages publiques de galets, détente sur une plage privée ou balade face au bleu azur.',
+                highlights: ['Plages des Ponchettes et de l’Opéra à 2 minutes', 'Les iconiques Chaises Bleues face à la mer', 'Piste cyclable et promenade piétonne panoramique'],
+                tip: 'Prévoyez des chaussures d’eau (méduses en plastique) pour marcher confortablement sur les galets emblématiques de Nice.',
+                address: 'Quai des États-Unis / Promenade des Anglais'
+            },
+            {
+                id: 'place-massena',
+                title: 'Place Masséna & Promenade du Paillon',
+                category: 'balades',
+                categoryLabel: 'Balades & Panoramas',
+                walkCategory: 'moins-5',
+                walkTime: '4 min à pied',
+                image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=900&q=80',
+                fallback: 'https://placehold.co/800x500/c2593f/ffffff?text=Place+Massena',
+                shortDesc: 'Arcades rouge ocre, damier noir et blanc, Fontaine du Soleil et le spectaculaire Miroir d’Eau de la coulée verte.',
+                fullDesc: 'Trait d’union entre le Vieux Nice et la ville moderne, la Place Masséna séduit par son architecture néoclassique d’inspiration piémontaise, son sol en damier et la monumentale Fontaine du Soleil. Juste à côté, la Promenade du Paillon déroule 12 hectares de jardins et son célèbre Miroir d’Eau de 3 000 m².',
+                highlights: ['Miroir d’Eau et brumisateurs rafraîchissants', 'Fontaine du Soleil et statues illuminées le soir', 'Jardins botaniques et aires de jeux en bois pour enfants'],
+                tip: 'À la tombée de la nuit, les 7 statues perchées de Jaume Plensa s’illuminent de couleurs changeantes : magique !',
+                address: 'Place Masséna, 06000 Nice'
+            },
+            {
+                id: 'gastronomie-nicoise',
+                title: 'Street-Food Niçoise & Glaces Fenocchio',
+                category: 'gastronomie',
+                categoryLabel: 'Gastronomie & Marchés',
+                walkCategory: 'sur-place',
+                walkTime: 'Sur place (au cœur du quartier)',
+                image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80',
+                fallback: 'https://placehold.co/800x500/f59e0b/ffffff?text=Gastronomie+Nicoise',
+                shortDesc: 'Socca croustillante chez René Socca ou Theresa, pissaladière, pan bagnat et glaces artisanales Place Rossetti.',
+                fullDesc: 'Impossible de visiter le Vieux Nice sans goûter à sa cuisine populaire inscrite au patrimoine immatériel ! Dégustez une part de socca chaude rue Miralheti, un pan bagnat généreux, puis terminez par un cornet chez le maître glacier Fenocchio sur la charmante Place Rossetti (plus de 90 parfums dont lavande, romarin ou tourte de blettes).',
+                highlights: ['Socca chaude chez René Socca ou Chez Theresa', 'Pissaladière, petits farcis et pan bagnat', '94 parfums de glaces artisanales chez Fenocchio'],
+                tip: 'La socca se mange immédiatement à la sortie du four au feu de bois, simplement relevée d’un tour de moulin à poivre.',
+                address: 'Place Rossetti & Rue Pairolière, 06300 Nice'
+            },
+            {
+                id: 'cathedrale-lascaris',
+                title: 'Cathédrale Sainte-Réparate & Palais Lascaris',
+                category: 'culture',
+                categoryLabel: 'Culture & Patrimoine',
+                walkCategory: 'sur-place',
+                walkTime: 'Sur place (2 min)',
+                image: 'https://images.unsplash.com/photo-1548625361-58a9b86aa83b?auto=format&fit=crop&w=900&q=80',
+                fallback: 'https://placehold.co/800x500/8a3521/ffffff?text=Patrimoine+Baroque',
+                shortDesc: 'Joyaux de l’art baroque niçois : le dôme vernissé de la Cathédrale Place Rossetti et les salons aristocratiques du Palais Lascaris.',
+                fullDesc: 'Au cœur du dédale médiéval se cachent deux chefs-d’œuvre baroques. La Cathédrale Sainte-Réparate impressionne par son clocher, sa coupole en tuiles vernissées et ses dix chapelles richement décorées. À deux rues de là, le Palais Lascaris (XVIIe siècle) dévoile un escalier monumental, des fresques mythologiques et une collection rare d’instruments de musique anciens.',
+                highlights: ['Dôme polychrome de la Cathédrale Place Rossetti', 'Escalier d’honneur et salons d’apparat du Palais Lascaris', 'Collection de plus de 500 instruments de musique anciens'],
+                tip: 'L’entrée à la Cathédrale Sainte-Réparate est libre et offre une pause fraîcheur bienvenue en été.',
+                address: 'Place Rossetti & 15 Rue Droite, 06300 Nice'
+            },
+            {
+                id: 'mamac-garibaldi',
+                title: 'Place Garibaldi & Esplanade du MAMAC',
+                category: 'culture',
+                categoryLabel: 'Culture & Patrimoine',
+                walkCategory: '5-15',
+                walkTime: '6 min à pied',
+                image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80',
+                fallback: 'https://placehold.co/800x500/075985/ffffff?text=Place+Garibaldi',
+                shortDesc: 'La plus ancienne grande place de Nice aux façades en trompe-l’œil, ses cafés historiques et le pôle d’art moderne et contemporain.',
+                fullDesc: 'Bordée d’arcades élégantes et de façades jaunes aux décors peints en trompe-l’œil, la Place Garibaldi est le point de rencontre favori des Niçois pour l’apéritif ou un plateau de fruits de mer au Café de Turin. Juste derrière s’élève l’architecture monumentale du MAMAC (Musée d’Art Moderne et d’Art Contemporain) et sa promenade des arts.',
+                highlights: ['Architecture piémontaise et trompe-l’œil de la Place Garibaldi', 'Dégustation d’huîtres au mythique Café de Turin', 'Univers d’Yves Klein et de Niki de Saint Phalle autour du MAMAC'],
+                tip: 'Notez que le bâtiment principal du MAMAC est en rénovation pluriannuelle, mais la programmation hors-les-murs et les œuvres extérieures restent visibles.',
+                address: 'Place Garibaldi, 06300 Nice'
+            },
+            {
+                id: 'port-lympia',
+                title: 'Port Lympia & Quartier des Antiquaires',
+                category: 'balades',
+                categoryLabel: 'Balades & Panoramas',
+                walkCategory: '5-15',
+                walkTime: '10 min à pied',
+                image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=900&q=80',
+                fallback: 'https://placehold.co/800x500/0c4a6e/ffffff?text=Port+Lympia',
+                shortDesc: 'Balade pittoresque le long des « pointus » colorés, immeubles génois ocre et rouge, brocanteurs et bonnes tables au bord de l’eau.',
+                fullDesc: 'Contournant la Colline du Château, le Port Lympia offre une atmosphère maritime pleine de charme où les yachts côtoient les « pointus », ces barques traditionnelles en bois peint. Explorez le quartier des Antiquaires (rue Catherine Ségurane) et flânez sur le quai Lunel ou la rue Bonaparte (« le Petit Marais niçois ») pour dîner.',
+                highlights: ['Les barques traditionnelles niçoises (« pointus »)', 'Rue Catherine Ségurane et ses boutiques d’antiquaires', 'Ambiance branchée et restaurants rue Bonaparte'],
+                tip: 'Prenez le petit bateau solaire électrique (Lou Passagin) qui traverse gratuitement le bassin du port en été !',
+                address: 'Quai Lunel / Place de l’Île-de-Beauté, 06300 Nice'
+            },
+            {
+                id: 'opera-theatre',
+                title: 'Opéra de Nice & Théâtre Francis-Gag',
+                category: 'shopping',
+                categoryLabel: 'Vie Nocturne & Shopping',
+                walkCategory: 'sur-place',
+                walkTime: 'Sur place (2 min)',
+                image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=900&q=80',
+                fallback: 'https://placehold.co/800x500/7e22ce/ffffff?text=Opera+de+Nice',
+                shortDesc: 'Soirées lyriques, ballets et concerts dans un somptueux théâtre à l’italienne face à la mer, ou théâtre nissart au cœur des ruelles.',
+                fullDesc: 'Inauguré en 1885 dans un style Belle Époque inspiré de l’Opéra Garnier, l’Opéra de Nice propose une riche saison d’opéras, de ballets et de concerts symphoniques. Pour une ambiance plus intimiste au cœur de la vieille ville, le Théâtre Francis-Gag accueille pièces contemporaines, humour et culture niçoise.',
+                highlights: ['Salle à l’italienne somptueuse de l’Opéra de Nice', 'Programmation lyrique, danse et musique classique', 'Spectacles vivants et théâtre au Francis-Gag'],
+                tip: 'Des visites guidées de l’Opéra sont organisées chaque semaine pour admirer le foyer et les coulisses en journée.',
+                address: '4-6 Rue Saint-François-de-Paule, 06300 Nice'
+            },
+            {
+                id: 'artisanat-ruelles',
+                title: 'Huiles d’Olive Alziari & Ruelles Colorées',
+                category: 'shopping',
+                categoryLabel: 'Vie Nocturne & Shopping',
+                walkCategory: 'sur-place',
+                walkTime: 'Sur place (0 min)',
+                image: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=80',
+                fallback: 'https://placehold.co/800x500/d97706/ffffff?text=Ruelles+%26+Artisanat',
+                shortDesc: 'Lèche-vitrines authentique : huile d’olive millénaire Nicolas Alziari, savons de Provence, épices et linge aux fenêtres.',
+                fullDesc: 'Perdez-vous volontairement dans le labyrinthe de ruelles étroites (rue Droite, rue du Jésus, rue Rossetti) où le linge sèche aux fenêtres entre deux façades pastel. C’est l’endroit idéal pour rapporter des souvenirs authentiques : les célèbres bidons bleus et jaunes d’huile d’olive de la Maison Alziari (depuis 1868), des épices en vrac ou des créations d’artisans locaux.',
+                highlights: ['Boutique historique Nicolas Alziari (huiles d’olive & tapenades)', 'Ateliers d’artistes, céramistes et créateurs rue Droite', 'Atmosphère villageoise et bars à vin conviviaux le soir'],
+                tip: 'Levez les yeux ! De nombreuses niches votives abritant des statuettes de la Vierge ornent les angles des immeubles anciens.',
+                address: '14 Rue Saint-François-de-Paule & Rue Droite'
+            }
+        ];
+
+        // Données des 3 itinéraires suggérés
+        const itinerariesData = {
+            matinee: {
+                title: 'Matinée Gourmande & Patrimoine Baroque',
+                subtitle: 'Une immersion sensorielle dans les saveurs et les couleurs du Vieux Nice, idéale entre 9h00 et 12h30.',
+                totalTime: '2h30',
+                distance: '1,8 km',
+                steps: [
+                    { time: '09h00', title: 'Café & Flânerie au Cours Saleya', desc: 'Commencez par un café en terrasse face aux étals multicolores du marché aux fleurs et des producteurs de fruits et légumes.' },
+                    { time: '10h00', title: 'Pause Socca chez Theresa ou René Socca', desc: 'Dégustez une part de socca brûlante sortie du four à bois, accompagnée d’une part de pissaladière fondante.' },
+                    { time: '10h45', title: 'Cathédrale Sainte-Réparate & Palais Lascaris', desc: 'Remontez la rue Droite pour admirer les fresques baroques et les façades ocres aux volets persiennés.' },
+                    { time: '11h45', title: 'Douceur glacée Place Rossetti', desc: 'Terminez la matinée par une glace artisanale chez Fenocchio (parfum lavande, figue ou citron de Menton) au pied de la cathédrale.' }
+                ]
+            },
+            sunset: {
+                title: 'Panoramas Dorés & Coucher de Soleil',
+                subtitle: 'La promenade romantique et photographique par excellence, à démarrer 1h30 avant le coucher du soleil.',
+                totalTime: '2h00',
+                distance: '2,2 km',
+                steps: [
+                    { time: 'Étape 1', title: 'Départ par le Quai des États-Unis', desc: 'Longez le front de mer depuis l’Opéra en direction de la Tour Bellanda au pied de la colline.' },
+                    { time: 'Étape 2', title: 'Ascension de la Colline du Château', desc: 'Montez par l’ascenseur gratuit ou les escaliers Lesage pour découvrir la grande cascade rafraîchissante.' },
+                    { time: 'Étape 3', title: 'Belvédère sur la Baie des Anges', desc: 'Installez-vous face à l’ouest pour voir le soleil embraser les toits du Vieux Nice et l’horizon de la Méditerranée.' },
+                    { time: 'Étape 4', title: 'Apéritif sur le Port Lympia', desc: 'Redescendez par le versant est vers le Port Lympia et la rue Bonaparte pour un verre face aux pointus illuminés.' }
+                ]
+            },
+            journee: {
+                title: 'L’Essentiel de Nice en 1 Journée Complète',
+                subtitle: 'Du marché matinal à la baignade de l’après-midi, le programme complet sans aucun transport.',
+                totalTime: 'Journée complète',
+                distance: '4,5 km',
+                steps: [
+                    { time: 'Matin', title: 'Cours Saleya, Ruelles & Palais Lascaris', desc: 'Découverte du marché, shopping gourmand chez Alziari (huile d’olive) et visite culturelle au cœur de la vieille ville.' },
+                    { time: 'Midi', title: 'Déjeuner niçois & Place Garibaldi', desc: 'Savourez des petits farcis niçois ou un pan bagnat, puis traversez jusqu’aux arcades piémontaises de la Place Garibaldi.' },
+                    { time: 'Après-midi', title: 'Promenade du Paillon & Baignade', desc: 'Balade rafraîchissante autour du Miroir d’Eau de la Place Masséna, suivie d’une baignade sur la plage des Ponchettes.' },
+                    { time: 'Soirée', title: 'Dîner dans le Vieux Nice', desc: 'Ambiance festive dans les ruelles animées autour de la rue de la Préfecture ou spectacle à l’Opéra de Nice.' }
+                ]
+            }
+        };
+
+        // État de l'application
+        let state = {
+            category: 'all',
+            walk: 'all',
+            search: '',
+            favorites: JSON.parse(localStorage.getItem('vieuxNiceFavorites') || '[]'),
+            activeTab: 'matinee'
+        };
+
+        // Références DOM
+        const gridEl = document.getElementById('activities-grid');
+        const emptyStateEl = document.getElementById('empty-state');
+        const counterEl = document.getElementById('results-counter');
+        const searchInput = document.getElementById('search-input');
+        const clearSearchBtn = document.getElementById('clear-search');
+        const favCountEl = document.getElementById('favorites-count');
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            renderActivities();
+            renderItinerary(state.activeTab);
+            updateFavoritesUI();
+            setupEventListeners();
+        });
+
+        // Filtrage et affichage des cartes d'activités
+        function renderActivities() {
+            const query = state.search.toLowerCase().trim();
+
+            const filtered = activitiesData.filter(item => {
+                const matchCat = state.category === 'all' || item.category === state.category;
+                const matchWalk = state.walk === 'all' || item.walkCategory === state.walk;
+                const matchSearch = !query || 
+                    item.title.toLowerCase().includes(query) ||
+                    item.shortDesc.toLowerCase().includes(query) ||
+                    item.fullDesc.toLowerCase().includes(query) ||
+                    item.highlights.some(h => h.toLowerCase().includes(query));
+                
+                return matchCat && matchWalk && matchSearch;
+            });
+
+            // Mise à jour du compteur
+            counterEl.textContent = `${filtered.length} activité${filtered.length > 1 ? 's' : ''} affichée${filtered.length > 1 ? 's' : ''}`;
+
+            if (filtered.length === 0) {
+                gridEl.innerHTML = '';
+                gridEl.classList.add('hidden');
+                emptyStateEl.classList.remove('hidden');
+                return;
+            }
+
+            gridEl.classList.remove('hidden');
+            emptyStateEl.classList.add('hidden');
+
+            gridEl.innerHTML = filtered.map(item => {
+                const isFav = state.favorites.includes(item.id);
+                return `
+                    <article class="bg-white rounded-3xl overflow-hidden border border-stone-200/80 shadow-sm card-hover flex flex-col justify-between group">
+                        <div>
+                            <!-- Image & Badges -->
+                            <div class="relative h-56 overflow-hidden bg-stone-200 cursor-pointer" onclick="openActivityModal('${item.id}')">
+                                <img src="${item.image}" 
+                                     alt="${item.title}" 
+                                     onerror="this.src='${item.fallback}'"
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                                
+                                <!-- Badge Catégorie -->
+                                <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/95 text-azur-900 shadow-sm backdrop-blur-sm">
+                                    ${item.categoryLabel}
+                                </span>
+
+                                <!-- Bouton Favori -->
+                                <button onclick="event.stopPropagation(); toggleFavorite('${item.id}')" 
+                                        aria-label="Ajouter aux favoris"
+                                        class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-white/95 hover:bg-white shadow-md flex items-center justify-center transition-transform active:scale-90">
+                                    <i class="${isFav ? 'fa-solid fa-heart text-sienne-500' : 'fa-regular fa-heart text-slate-600'} text-base"></i>
+                                </button>
+
+                                <!-- Temps de marche -->
+                                <div class="absolute bottom-3 left-3.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-azur-900/85 text-white text-xs font-medium backdrop-blur-sm">
+                                    <i class="fa-solid fa-person-walking text-ocre-400"></i>
+                                    <span>${item.walkTime}</span>
+                                </div>
+                            </div>
+
+                            <!-- Contenu -->
+                            <div class="p-6">
+                                <h3 onclick="openActivityModal('${item.id}')" class="font-serif text-xl font-bold text-azur-900 mb-2 group-hover:text-sienne-600 transition-colors cursor-pointer">
+                                    ${item.title}
+                                </h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                    ${item.shortDesc}
+                                </p>
+                                
+                                <!-- Points forts -->
+                                <div class="space-y-1.5 pt-3 border-t border-stone-100">
+                                    ${item.highlights.slice(0, 2).map(hl => `
+                                        <div class="flex items-start gap-2 text-xs text-slate-500">
+                                            <i class="fa-solid fa-circle-check text-azur-600 mt-0.5 shrink-0"></i>
+                                            <span>${hl}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pied de carte -->
+                        <div class="px-6 pb-5 pt-2 flex items-center justify-between">
+                            <button onclick="openActivityModal('${item.id}')" class="inline-flex items-center gap-1.5 text-sm font-semibold text-azur-700 hover:text-sienne-600 transition-colors">
+                                <span>Découvrir & conseils</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                            <button onclick="toggleFavorite('${item.id}')" class="text-xs font-medium ${isFav ? 'text-sienne-600' : 'text-slate-400 hover:text-slate-600'}">
+                                ${isFav ? 'Sauvegardé' : '+ Carnet'}
+                            </button>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // Affichage de la modale détaillée d'une activité
+        function openActivityModal(id) {
+            const item = activitiesData.find(a => a.id === id);
+            if (!item) return;
+
+            const isFav = state.favorites.includes(item.id);
+            const modalBody = document.getElementById('activity-modal-body');
+
+            modalBody.innerHTML = `
+                <div class="relative h-64 sm:h-72 bg-stone-200">
+                    <img src="${item.image}" alt="${item.title}" onerror="this.src='${item.fallback}'" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
+                    <div class="absolute bottom-5 left-6 right-6 text-white">
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-sienne-500 text-white mb-2">
+                            ${item.categoryLabel}
+                        </span>
+                        <h2 class="font-serif text-2xl sm:text-3xl font-bold leading-tight">${item.title}</h2>
+                    </div>
+                </div>
+
+                <div class="p-6 sm:p-8 space-y-6">
+                    <!-- Infos rapides -->
+                    <div class="flex flex-wrap gap-3 text-xs sm:text-sm">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-azur-50 text-azur-800 font-medium">
+                            <i class="fa-solid fa-person-walking text-azur-600"></i>
+                            <span>${item.walkTime} depuis le Vieux Nice</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-sable text-slate-700 font-medium border border-stone-200">
+                            <i class="fa-solid fa-location-dot text-sienne-500"></i>
+                            <span>${item.address}</span>
+                        </div>
+                    </div>
+
+                    <!-- Description complète -->
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">À propos de ce lieu</h4>
+                        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">${item.fullDesc}</p>
+                    </div>
+
+                    <!-- Les incontournables sur place -->
+                    <div class="bg-sable rounded-2xl p-5 border border-stone-200/70">
+                        <h4 class="font-serif font-bold text-azur-900 text-base mb-3">À ne pas manquer sur place</h4>
+                        <ul class="space-y-2">
+                            ${item.highlights.map(hl => `
+                                <li class="flex items-start gap-2.5 text-sm text-slate-700">
+                                    <i class="fa-solid fa-check text-sienne-500 mt-1"></i>
+                                    <span>${hl}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+
+                    <!-- Conseil d'initié -->
+                    <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-ocre-50 border border-ocre-200/80 text-slate-800">
+                        <div class="w-9 h-9 rounded-xl bg-ocre-400/20 text-ocre-600 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-ocre-600 mb-0.5">Le conseil du guide</div>
+                            <p class="text-sm text-slate-700">${item.tip}</p>
+                        </div>
+                    </div>
+
+                    <!-- Bouton d'action -->
+                    <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                        <button onclick="toggleFavorite('${item.id}'); openActivityModal('${item.id}')" 
+                                class="flex-1 py-3.5 px-5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-all ${isFav ? 'bg-sienne-50 text-sienne-700 border border-sienne-200' : 'bg-sienne-600 hover:bg-sienne-700 text-white shadow-md'}">
+                            <i class="${isFav ? 'fa-solid fa-heart text-sienne-500' : 'fa-regular fa-heart'}"></i>
+                            <span>${isFav ? 'Retirer de mon carnet de visite' : 'Ajouter à mon carnet de visite'}</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            const modal = document.getElementById('activity-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // Affichage des itinéraires par onglet
+        function renderItinerary(tabKey) {
+            const data = itinerariesData[tabKey];
+            const container = document.getElementById('itinerary-content');
+
+            container.innerHTML = `
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-8 mb-8 border-b border-stone-100">
+                    <div>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-azur-900 mb-2">${data.title}</h3>
+                        <p class="text-slate-600 text-sm sm:text-base">${data.subtitle}</p>
+                    </div>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-azur-50 text-azur-800 text-xs sm:text-sm font-semibold">
+                            <i class="fa-regular fa-clock text-azur-600"></i> ${data.totalTime}
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-ocre-50 text-ocre-700 text-xs sm:text-sm font-semibold">
+                            <i class="fa-solid fa-shoe-prints text-ocre-500"></i> ${data.distance}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Étapes chronologiques -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    ${data.steps.map((step, index) => `
+                        <div class="relative flex gap-4 p-5 rounded-2xl bg-sable border border-stone-200/70">
+                            <div class="flex flex-col items-center">
+                                <div class="w-9 h-9 rounded-full bg-azur-700 text-white font-bold text-sm flex items-center justify-center shadow-sm shrink-0">
+                                    ${index + 1}
+                                </div>
+                            </div>
+                            <div>
+                                <span class="inline-block text-xs font-bold uppercase tracking-wider text-sienne-600 mb-1">${step.time}</span>
+                                <h4 class="font-serif text-lg font-bold text-slate-900 mb-1.5">${step.title}</h4>
+                                <p class="text-sm text-slate-600 leading-relaxed">${step.desc}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Gestion des Favoris (Carnet de visite)
+        function toggleFavorite(id) {
+            if (state.favorites.includes(id)) {
+                state.favorites = state.favorites.filter(favId => favId !== id);
+            } else {
+                state.favorites.push(id);
+            }
+            localStorage.setItem('vieuxNiceFavorites', JSON.stringify(state.favorites));
+            renderActivities();
+            updateFavoritesUI();
+        }
+
+        function updateFavoritesUI() {
+            favCountEl.textContent = state.favorites.length;
+            const listEl = document.getElementById('favorites-list');
+
+            if (state.favorites.length === 0) {
+                listEl.innerHTML = `
+                    <div class="text-center py-12 px-4">
+                        <div class="w-14 h-14 rounded-2xl bg-sienne-50 text-sienne-400 flex items-center justify-center mx-auto mb-3 text-xl">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-slate-800 mb-1">Votre carnet est vide</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Cliquez sur le petit cœur en haut des cartes d'activités pour préparer votre programme de visite sur mesure.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const favItems = activitiesData.filter(item => state.favorites.includes(item.id));
+            listEl.innerHTML = favItems.map(item => `
+                <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-sable border border-stone-200/80">
+                    <img src="${item.image}" alt="${item.title}" onerror="this.src='${item.fallback}'" class="w-16 h-16 rounded-xl object-cover shrink-0">
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-serif font-bold text-sm text-azur-900 truncate">${item.title}</h4>
+                        <div class="text-xs text-slate-500 mt-0.5 flex items-center gap-1.5">
+                            <i class="fa-solid fa-person-walking text-azur-600"></i> ${item.walkTime}
+                        </div>
+                        <button onclick="openActivityModal('${item.id}'); document.getElementById('favorites-drawer').classList.add('hidden')" class="text-xs font-semibold text-sienne-600 hover:underline mt-1">
+                            Voir les détails
+                        </button>
+                    </div>
+                    <button onclick="toggleFavorite('${item.id}')" class="p-2 text-slate-400 hover:text-sienne-600 transition-colors" title="Retirer">
+                        <i class="fa-solid fa-trash-can text-sm"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // Configuration de tous les écouteurs d'événements
+        function setupEventListeners() {
+            // Filtres par catégorie
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.cat-btn').forEach(b => {
+                        b.classList.remove('active', 'bg-sienne-600', 'text-white', 'shadow-sm');
+                        b.classList.add('bg-sable', 'text-slate-700');
+                    });
+                    btn.classList.add('active', 'bg-sienne-600', 'text-white', 'shadow-sm');
+                    btn.classList.remove('bg-sable', 'text-slate-700');
+                    
+                    state.category = btn.dataset.category;
+                    renderActivities();
+                });
+            });
+
+            // Filtres par temps de marche
+            document.querySelectorAll('.walk-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.walk-btn').forEach(b => {
+                        b.classList.remove('active', 'bg-azur-700', 'text-white');
+                        b.classList.add('bg-sable', 'text-slate-600');
+                    });
+                    btn.classList.add('active', 'bg-azur-700', 'text-white');
+                    btn.classList.remove('bg-sable', 'text-slate-600');
+
+                    state.walk = btn.dataset.walk;
+                    renderActivities();
+                });
+            });
+
+            // Barre de recherche
+            searchInput.addEventListener('input', (e) => {
+                state.search = e.target.value;
+                clearSearchBtn.classList.toggle('hidden', !state.search);
+                renderActivities();
+            });
+
+            clearSearchBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                state.search = '';
+                clearSearchBtn.classList.add('hidden');
+                renderActivities();
+            });
+
+            // Réinitialisation complète
+            document.getElementById('reset-all-filters').addEventListener('click', () => {
+                state.category = 'all';
+                state.walk = 'all';
+                state.search = '';
+                searchInput.value = '';
+                clearSearchBtn.classList.add('hidden');
+
+                document.querySelector('.cat-btn[data-category="all"]').click();
+                document.querySelector('.walk-btn[data-walk="all"]').click();
+            });
+
+            // Onglets d'itinéraires
+            document.querySelectorAll('.itinerary-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.itinerary-tab').forEach(t => {
+                        t.classList.remove('active', 'border-sienne-600', 'bg-white', 'text-azur-900');
+                        t.classList.add('border-transparent', 'text-slate-600');
+                    });
+                    tab.classList.add('active', 'border-sienne-600', 'bg-white', 'text-azur-900');
+                    tab.classList.remove('border-transparent', 'text-slate-600');
+
+                    state.activeTab = tab.dataset.tab;
+                    renderItinerary(state.activeTab);
+                });
+            });
+
+            // Modale activité
+            const activityModal = document.getElementById('activity-modal');
+            document.getElementById('close-activity-modal').addEventListener('click', () => {
+                activityModal.classList.add('hidden');
+                activityModal.classList.remove('flex');
+            });
+            activityModal.addEventListener('click', (e) => {
+                if (e.target === activityModal) {
+                    activityModal.classList.add('hidden');
+                    activityModal.classList.remove('flex');
+                }
+            });
+
+            // Tiroir Favoris
+            const favDrawer = document.getElementById('favorites-drawer');
+            document.getElementById('open-favorites-btn').addEventListener('click', () => {
+                favDrawer.classList.remove('hidden');
+                favDrawer.classList.add('flex');
+            });
+            document.getElementById('close-favorites-drawer').addEventListener('click', () => {
+                favDrawer.classList.add('hidden');
+                favDrawer.classList.remove('flex');
+            });
+            favDrawer.addEventListener('click', (e) => {
+                if (e.target === favDrawer) {
+                    favDrawer.classList.add('hidden');
+                    favDrawer.classList.remove('flex');
+                }
+            });
+
+            // Copier la liste des favoris dans le presse-papiers
+            document.getElementById('copy-favorites-btn').addEventListener('click', () => {
+                if (state.favorites.length === 0) return;
+                const favItems = activitiesData.filter(item => state.favorites.includes(item.id));
+                const textToCopy = "Mon carnet de visite - Vieux Nice :\n\n" + 
+                    favItems.map((item, idx) => `${idx + 1}. ${item.title} (${item.walkTime}) - ${item.address}`).join('\n');
+
+                const tempTextArea = document.createElement('textarea');
+                tempTextArea.value = textToCopy;
+                document.body.appendChild(tempTextArea);
+                tempTextArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempTextArea);
+
+                const feedback = document.getElementById('copy-feedback');
+                feedback.classList.remove('hidden');
+                setTimeout(() => feedback.classList.add('hidden'), 3000);
+            });
+        }
+    </script>
+</body>
+</html>
+```
