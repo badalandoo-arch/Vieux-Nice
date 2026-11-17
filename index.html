@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guide du Voyageur - Vieux Nice & Alentours</title>
+    <title>Guide du Voyageur - Rue Benoît Bunico, Vieux Nice</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -47,7 +47,7 @@
         <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
             <div class="flex items-center space-x-2 text-sm font-medium">
                 <i class="fa-solid fa-compass text-azure-400"></i>
-                <span data-i18n="top_title">Guide Exclusif - Nice</span>
+                <span data-i18n="top_title">Guide Exclusif - Rue Benoît Bunico</span>
             </div>
             <!-- Sélecteur de langues -->
             <div class="flex items-center space-x-1.5 overflow-x-auto py-1">
@@ -68,13 +68,13 @@
         <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <span class="inline-block py-1 px-4 rounded-full bg-white/10 backdrop-blur-md text-azure-200 text-sm font-medium mb-4 border border-white/20" data-i18n="hero_badge">
-                <i class="fa-solid fa-location-dot mr-1.5"></i> Spécial Vieux Nice & Alentours
+                <i class="fa-solid fa-location-dot mr-1.5"></i> Départ : Rue Benoît Bunico • Vieux Nice
             </span>
             <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" data-i18n="hero_title">
                 Votre Séjour Inoubliable à Nice
             </h1>
             <p class="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto font-light" data-i18n="hero_subtitle">
-                Activités, bonnes adresses, marchés et pépites locales accessibles à pied depuis votre location.
+                Toutes les activités, plages, marchés et bonnes adresses calculés à pied depuis la rue Benoît Bunico.
             </p>
         </div>
     </section>
@@ -85,48 +85,78 @@
         <!-- SECTION ACTIVITÉS -->
         <div>
             <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
-                <i class="fa-solid fa-star text-amber-500 mr-3"></i> <span data-i18n="sec_activities">Incontournables à proximité</span>
+                <i class="fa-solid fa-star text-amber-500 mr-3"></i> <span data-i18n="sec_activities">À pied depuis la rue Benoît Bunico</span>
             </h2>
             
             <div class="grid md:grid-cols-2 gap-6">
-                <!-- Carte 1 -->
+                <!-- Carte 1 : Ruelles du Vieux Nice -->
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
                     <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-semibold px-3 py-1 bg-azure-50 text-azure-700 rounded-full" data-i18n="tag_culture">Culture & Histoire</span>
-                        <span class="text-xs text-slate-500"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_2min">2 min à pied</span></span>
+                        <span class="text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-700 rounded-full" data-i18n="tag_gastronomy">Gastronomie & Ruelles</span>
+                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_0min">Sur place (0 min • 50 m)</span></span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card4_title">Cœur du Vieux Nice & Place Rossetti</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card4_desc">Vous êtes au cœur du quartier historique ! Goûtez la socca traditionnelle, les panisses et les célèbres glaces artisanales de la Place Rossetti juste à côté.</p>
+                </div>
+
+                <!-- Carte Spécialité : Pan Bagnat chez Félix -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-amber-200 hover:shadow-md transition relative">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-semibold px-3 py-1 bg-amber-100 text-amber-800 rounded-full" data-i18n="tag_coup_coeur">Coup de cœur • Pan Bagnat</span>
+                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_1min">1 min à pied (80 m)</span></span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card_felix_title">Chez Félix — Le vrai Pan Bagnat</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card_felix_desc">À deux pas de l'appartement, ne manquez pas Félix pour déguster un authentique Pan Bagnat niçois généreux et préparé dans les règles de l'art. Idéal à emporter sur la plage !</p>
+                </div>
+
+                <!-- Carte 2 : Cours Saleya -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-semibold px-3 py-1 bg-azure-50 text-azure-700 rounded-full" data-i18n="tag_culture">Culture & Marché</span>
+                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_2min">2 min à pied (180 m)</span></span>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card1_title">Le Cours Saleya & son Marché</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card1_desc">Célèbre pour son marché aux fleurs coloré, ses antiquaires le lundi et ses étals de produits provençaux gorgés de soleil.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card1_desc">À deux pas en descendant vers la mer : célèbre pour son marché aux fleurs coloré, ses étals de produits provençaux et ses antiquaires le lundi.</p>
                 </div>
 
-                <!-- Carte 2 -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-semibold px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full" data-i18n="tag_view">Panoramique</span>
-                        <span class="text-xs text-slate-500"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_5min">5 min à pied</span></span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card2_title">La Colline du Château</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card2_desc">Offre la vue imprenable la plus célèbre sur la Baie des Anges, les toits du Vieux Nice et le port. Accès par escaliers ou ascenseur gratuit.</p>
-                </div>
-
-                <!-- Carte 3 -->
+                <!-- Carte 3 : Promenade des Anglais & Plages -->
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs font-semibold px-3 py-1 bg-blue-50 text-blue-700 rounded-full" data-i18n="tag_relax">Détente & Mer</span>
-                        <span class="text-xs text-slate-500"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_3min">3 min à pied</span></span>
+                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_4min">4 min à pied (350 m)</span></span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card3_title">La Promenade des Anglais</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card3_desc">Idéale pour une balade face au bleu azur de la Méditerranée, s'étirant le long des plages de galets emblématiques.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card3_title">La Promenade des Anglais & Plages</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card3_desc">Traversez le Cours Saleya pour rejoindre immédiatement le bord de mer, les plages de galets de la Baie des Anges et les mythiques chaises bleues.</p>
                 </div>
 
-                <!-- Carte 4 -->
+                <!-- Carte 4 : Colline du Château -->
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
                     <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-700 rounded-full" data-i18n="tag_gastronomy">Gastronomie</span>
-                        <span class="text-xs text-slate-500"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_1min">1 min à pied</span></span>
+                        <span class="text-xs font-semibold px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full" data-i18n="tag_view">Panoramique</span>
+                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_5min">5 min à pied (400 m)</span></span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card4_title">Les Ruelles du Vieux Nice</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card4_desc">Dédale pittoresque de façades ocres et pastel. Goûtez absolument la socca traditionnelle et les panisse au détour d'une place.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card2_title">La Colline du Château & Cascade</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card2_desc">Vue imprenable sur la Baie des Anges, les toits ocre du Vieux Nice et le port. Accès rapide par les escaliers Lesage ou l'ascenseur gratuit.</p>
+                </div>
+
+                <!-- Carte 5 : Place Masséna & Coulée Verte -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-semibold px-3 py-1 bg-purple-50 text-purple-700 rounded-full" data-i18n="tag_shopping">Shopping & Parc</span>
+                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_6min">6 min à pied (450 m)</span></span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card5_title">Place Masséna & Promenade du Paillon</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card5_desc">Le grand parc urbain avec son miroir d'eau rafraîchissant, suivi de l'emblématique Place Masséna et des rues commerçantes (avenue Jean Médecin).</p>
+                </div>
+
+                <!-- Carte 6 : Port Lympia & Place Garibaldi -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition md:col-span-2">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-semibold px-3 py-1 bg-rose-50 text-rose-700 rounded-full" data-i18n="tag_port">Sorties & Port</span>
+                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_8min">8 min à pied (650 m)</span></span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card6_title">Place Garibaldi & Port Lympia</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card6_desc">Quartier animé prisé des locaux pour ses terrasses ensoleillées, ses bars à vin, ses antiquaires et ses pointus colorés amarrés au port.</p>
                 </div>
             </div>
         </div>
@@ -134,7 +164,7 @@
         <!-- SECTION INFOS PRATIQUES -->
         <div class="bg-azure-900 text-white rounded-3xl p-8 shadow-lg">
             <h2 class="text-2xl font-bold mb-4 flex items-center">
-                <i class="fa-solid fa-circle-info text-azure-400 mr-3"></i> <span data-i18n="sec_practical">Infos pratiques pour votre séjour</span>
+                <i class="fa-solid fa-circle-info text-azure-400 mr-3"></i> <span data-i18n="sec_practical">Infos pratiques depuis la rue Benoît Bunico</span>
             </h2>
             <div class="grid md:grid-cols-3 gap-6 mt-6">
                 <div class="bg-white/10 backdrop-blur p-5 rounded-2xl border border-white/10">
@@ -143,8 +173,8 @@
                     <p class="text-sm text-slate-200 mt-1">Mot de passe : <span class="font-mono bg-black/30 px-1.5 py-0.5 rounded">soleil06</span></p>
                 </div>
                 <div class="bg-white/10 backdrop-blur p-5 rounded-2xl border border-white/10">
-                    <div class="text-azure-300 font-bold mb-1" data-i18n="trans_title"><i class="fa-solid fa-tram mr-2"></i> Transports</div>
-                    <p class="text-sm text-slate-200" data-i18n="trans_desc">Tramway L1 (station Opéra-Vieille Ville) à 3 minutes pour rejoindre la gare SNCF ou l'aéroport.</p>
+                    <div class="text-azure-300 font-bold mb-1" data-i18n="trans_title"><i class="fa-solid fa-tram mr-2"></i> Transports (3 à 6 min)</div>
+                    <p class="text-sm text-slate-200" data-i18n="trans_desc">Tram L1 (Cathédrale - Vieille Ville) à 3 min pour la gare SNCF. Tram L2 (Garibaldi) à 6 min pour un accès direct à l'aéroport.</p>
                 </div>
                 <div class="bg-white/10 backdrop-blur p-5 rounded-2xl border border-white/10">
                     <div class="text-azure-300 font-bold mb-1" data-i18n="help_title"><i class="fa-solid fa-phone mr-2"></i> Urgences / Aide</div>
@@ -157,110 +187,335 @@
 
     <!-- FOOTER -->
     <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm border-t border-slate-800 mt-16">
-        <p data-i18n="footer_text">Créé avec soin pour rendre votre séjour à Nice inoubliable ☀️</p>
+        <p data-i18n="footer_text">Rue Benoît Bunico, Vieux Nice • Créé avec soin pour rendre votre séjour inoubliable ☀️</p>
     </footer>
 
     <!-- SCRIPT DE TRADUCTION INSTANTANÉE -->
     <script>
         const translations = {
             fr: {
-                top_title: "Guide Exclusif - Nice",
-                hero_badge: "Spécial Vieux Nice & Alentours",
+                top_title: "Guide Exclusif - Rue Benoît Bunico",
+                hero_badge: "Départ : Rue Benoît Bunico • Vieux Nice",
                 hero_title: "Votre Séjour Inoubliable à Nice",
-                hero_subtitle: "Activités, bonnes adresses, marchés et pépites locales accessibles à pied depuis votre location.",
-                sec_activities: "Incontournables à proximité",
-                tag_culture: "Culture & Histoire",
-                tag_view: "Panoramique",
+                hero_subtitle: "Toutes les activités, plages, marchés et bonnes adresses calculés à pied depuis la rue Benoît Bunico.",
+                sec_activities: "À pied depuis la rue Benoît Bunico",
+                tag_gastronomy: "Gastronomie & Ruelles",
+                tag_coup_coeur: "Coup de cœur • Pan Bagnat",
+                tag_culture: "Culture & Marché",
                 tag_relax: "Détente & Mer",
-                tag_gastronomy: "Gastronomie",
-                dist_2min: "2 min à pied",
-                dist_5min: "5 min à pied",
-                dist_3min: "3 min à pied",
-                dist_1min: "1 min à pied",
+                tag_view: "Panoramique",
+                tag_shopping: "Shopping & Parc",
+                tag_port: "Sorties & Port",
+                dist_0min: "Sur place (0 min • 50 m)",
+                dist_1min: "1 min à pied (80 m)",
+                dist_2min: "2 min à pied (180 m)",
+                dist_4min: "4 min à pied (350 m)",
+                dist_5min: "5 min à pied (400 m)",
+                dist_6min: "6 min à pied (450 m)",
+                dist_8min: "8 min à pied (650 m)",
+                card4_title: "Cœur du Vieux Nice & Place Rossetti",
+                card4_desc: "Vous êtes au cœur du quartier historique ! Goûtez la socca traditionnelle, les panisses et les célèbres glaces artisanales de la Place Rossetti juste à côté.",
+                card_felix_title: "Chez Félix — Le vrai Pan Bagnat",
+                card_felix_desc: "À deux pas de l'appartement, ne manquez pas Félix pour déguster un authentique Pan Bagnat niçois généreux et préparé dans les règles de l'art. Idéal à emporter sur la plage !",
                 card1_title: "Le Cours Saleya & son Marché",
-                card1_desc: "Célèbre pour son marché aux fleurs coloré, ses antiquaires le lundi et ses étals de produits provençaux gorgés de soleil.",
-                card2_title: "La Colline du Château",
-                card2_desc: "Offre la vue imprenable la plus célèbre sur la Baie des Anges, les toits du Vieux Nice et le port. Accès par escaliers ou ascenseur gratuit.",
-                card3_title: "La Promenade des Anglais",
-                card3_desc: "Idéale pour une balade face au bleu azur de la Méditerranée, s'étirant le long des plages de galets emblématiques.",
-                card4_title: "Les Ruelles du Vieux Nice",
-                card4_desc: "Dédale pittoresque de façades ocres et pastel. Goûtez absolument la socca traditionnelle et les panisse au détour d'une place.",
-                sec_practical: "Infos pratiques pour votre séjour",
+                card1_desc: "À deux pas en descendant vers la mer : célèbre pour son marché aux fleurs coloré, ses étals de produits provençaux et ses antiquaires le lundi.",
+                card3_title: "La Promenade des Anglais & Plages",
+                card3_desc: "Traversez le Cours Saleya pour rejoindre immédiatement le bord de mer, les plages de galets de la Baie des Anges et les mythiques chaises bleues.",
+                card2_title: "La Colline du Château & Cascade",
+                card2_desc: "Vue imprenable sur la Baie des Anges, les toits ocre du Vieux Nice et le port. Accès rapide par les escaliers Lesage ou l'ascenseur gratuit.",
+                card5_title: "Place Masséna & Promenade du Paillon",
+                card5_desc: "Le grand parc urbain avec son miroir d'eau rafraîchissant, suivi de l'emblématique Place Masséna et des rues commerçantes (avenue Jean Médecin).",
+                card6_title: "Place Garibaldi & Port Lympia",
+                card6_desc: "Quartier animé prisé des locaux pour ses terrasses ensoleillées, ses bars à vin, ses antiquaires et ses pointus colorés amarrés au port.",
+                sec_practical: "Infos pratiques depuis la rue Benoît Bunico",
                 wifi_title: "Wi-Fi Appartement",
-                trans_title: "Transports",
-                trans_desc: "Tramway L1 (station Opéra-Vieille Ville) à 3 minutes pour rejoindre la gare SNCF ou l'aéroport.",
+                trans_title: "Transports (3 à 6 min)",
+                trans_desc: "Tram L1 (Cathédrale - Vieille Ville) à 3 min pour la gare SNCF. Tram L2 (Garibaldi) à 6 min pour un accès direct à l'aéroport.",
                 help_title: "Urgences / Aide",
                 help_desc: "En cas de besoin ou de question sur l'appartement, n'hésitez pas à nous contacter directement via la messagerie Booking/Airbnb !",
-                footer_text: "Créé avec soin pour rendre votre séjour à Nice inoubliable ☀️"
+                footer_text: "Rue Benoît Bunico, Vieux Nice • Créé avec soin pour rendre votre séjour inoubliable ☀️"
             },
             en: {
-                top_title: "Exclusive Guide - Nice",
-                hero_badge: "Old Nice & Surroundings",
+                top_title: "Exclusive Guide - Rue Benoît Bunico",
+                hero_badge: "Departure: Rue Benoît Bunico • Old Nice",
                 hero_title: "Your Unforgettable Stay in Nice",
-                hero_subtitle: "Activities, great addresses, markets and local gems within walking distance from your rental.",
-                sec_activities: "Must-sees Nearby",
-                tag_culture: "Culture & History",
-                tag_view: "Panoramic",
+                hero_subtitle: "All activities, beaches, markets and great local addresses measured on foot from Rue Benoît Bunico.",
+                sec_activities: "Walking Distances from Rue Benoît Bunico",
+                tag_gastronomy: "Gastronomy & Alleys",
+                tag_coup_coeur: "Local Favorite • Pan Bagnat",
+                tag_culture: "Culture & Market",
                 tag_relax: "Relaxation & Sea",
-                tag_gastronomy: "Gastronomy",
-                dist_2min: "2 min walk",
-                dist_5min: "5 min walk",
-                dist_3min: "3 min walk",
-                dist_1min: "1 min walk",
+                tag_view: "Panoramic",
+                tag_shopping: "Shopping & Park",
+                tag_port: "Nightlife & Port",
+                dist_0min: "Right outside (0 min • 50 m)",
+                dist_1min: "1 min walk (80 m)",
+                dist_2min: "2 min walk (180 m)",
+                dist_4min: "4 min walk (350 m)",
+                dist_5min: "5 min walk (400 m)",
+                dist_6min: "6 min walk (450 m)",
+                dist_8min: "8 min walk (650 m)",
+                card4_title: "Heart of Old Nice & Place Rossetti",
+                card4_desc: "You are right in the historic center! Try traditional socca, panisse, and the famous artisanal ice creams at Place Rossetti just steps away.",
+                card_felix_title: "Chez Félix — Authentic Pan Bagnat",
+                card_felix_desc: "Just steps from the apartment, don't miss Félix to enjoy an authentic, generous traditional Niçois Pan Bagnat sandwich. Perfect to take away to the beach!",
                 card1_title: "Cours Saleya & its Market",
-                card1_desc: "Famous for its colorful flower market, Monday antiques market, and sun-drenched Provençal food stalls.",
-                card2_title: "Castle Hill (Colline du Château)",
-                card2_desc: "Offers the most famous breathtaking view over the Baie des Anges, the rooftops of Old Nice, and the port. Access via stairs or free elevator.",
-                card3_title: "Promenade des Anglais",
-                card3_desc: "Ideal for a stroll facing the azure blue of the Mediterranean, stretching along the iconic pebble beaches.",
-                card4_title: "The Alleys of Old Nice",
-                card4_desc: "Picturesque maze of ochre and pastel facades. Be sure to try traditional socca and panisse around a square.",
-                sec_practical: "Practical Info for Your Stay",
+                card1_desc: "Just down the street toward the sea: famous for its colorful flower market, Provençal food stalls, and Monday antiques market.",
+                card3_title: "Promenade des Anglais & Beaches",
+                card3_desc: "Cross Cours Saleya to immediately reach the seafront, the pebble beaches of the Baie des Anges, and the iconic blue chairs.",
+                card2_title: "Castle Hill & Waterfall",
+                card2_desc: "Breathtaking view over the Baie des Anges, Old Nice rooftops, and the port. Quick access via the Lesage stairs or free elevator.",
+                card5_title: "Place Masséna & Promenade du Paillon",
+                card5_desc: "The large urban park with its refreshing water mirror, followed by iconic Place Masséna and main shopping streets (Avenue Jean Médecin).",
+                card6_title: "Place Garibaldi & Port Lympia",
+                card6_desc: "Lively neighborhood loved by locals for its sunny terraces, wine bars, antique shops, and colorful traditional boats moored in the port.",
+                sec_practical: "Practical Info from Rue Benoît Bunico",
                 wifi_title: "Apartment Wi-Fi",
-                trans_title: "Transportation",
-                trans_desc: "Tram L1 (Opéra-Vieille Ville station) 3 minutes away to reach the train station or airport.",
+                trans_title: "Transport (3 to 6 min)",
+                trans_desc: "Tram L1 (Cathédrale - Vieille Ville) 3 min away for the train station. Tram L2 (Garibaldi) 6 min away for direct airport access.",
                 help_title: "Emergency / Help",
                 help_desc: "If you need anything or have questions about the apartment, feel free to contact us directly via Booking/Airbnb messages!",
-                footer_text: "Created with care to make your stay in Nice unforgettable ☀️"
+                footer_text: "Rue Benoît Bunico, Old Nice • Created with care to make your stay unforgettable ☀️"
             },
             it: {
-                top_title: "Guida Esclusiva - Nizza",
-                hero_badge: "Speciale Centro Storico e Dintorni",
+                top_title: "Guida Esclusiva - Rue Benoît Bunico",
+                hero_badge: "Partenza: Rue Benoît Bunico • Vecchia Nizza",
                 hero_title: "Il Tuo Soggiorno Indimenticabile a Nizza",
-                hero_subtitle: "Attività, ottimi indirizzi, mercati e gemme locali raggiungibili a piedi dal vostro alloggio.",
-                sec_activities: "Da non perdere nelle vicinanze",
-                tag_culture: "Cultura e Storia",
-                tag_view: "Panoramica",
+                hero_subtitle: "Tutte le attività, spiagge, mercati e ottimi indirizzi calcolati a piedi da Rue Benoît Bunico.",
+                sec_activities: "A piedi da Rue Benoît Bunico",
+                tag_gastronomy: "Gastronomia e Vicoli",
+                tag_coup_coeur: "Consigliato • Pan Bagnat",
+                tag_culture: "Cultura e Mercato",
                 tag_relax: "Relax e Mare",
-                tag_gastronomy: "Gastronomia",
-                dist_2min: "2 min a piedi",
-                dist_5min: "5 min a piedi",
-                dist_3min: "3 min a piedi",
-                dist_1min: "1 min a piedi",
+                tag_view: "Panoramica",
+                tag_shopping: "Shopping e Parco",
+                tag_port: "Locali e Porto",
+                dist_0min: "Sul posto (0 min • 50 m)",
+                dist_1min: "1 min a piedi (80 m)",
+                dist_2min: "2 min a piedi (180 m)",
+                dist_4min: "4 min a piedi (350 m)",
+                dist_5min: "5 min a piedi (400 m)",
+                dist_6min: "6 min a piedi (450 m)",
+                dist_8min: "8 min a piedi (650 m)",
+                card4_title: "Cuore della Vecchia Nizza e Place Rossetti",
+                card4_desc: "Siete nel cuore del centro storico! Assaggiate la socca tradizionale, le panisse e i famosi gelati artigianali di Place Rossetti proprio accanto.",
+                card_felix_title: "Chez Félix — Il vero Pan Bagnat",
+                card_felix_desc: "A due passi dall'appartamento, non perdetevi Félix per gustare un autentico Pan Bagnat nizzardo generoso e preparato a regola d'arte. Ideale da portare in spiaggia!",
                 card1_title: "Cours Saleya e il suo Mercato",
-                card1_desc: "Famoso per il suo mercato dei fiori colorato, gli antiquari il lunedì e le bancarelle di prodotti provenzali baciati dal sole.",
-                card2_title: "Collina del Castello",
-                card2_desc: "Offre la vista panoramica più famosa sulla Baie des Anges, i tetti della vecchia Nizza e il porto. Accesso con scale o ascensore gratuito.",
-                card3_title: "Promenade des Anglais",
-                card3_desc: "Ideale per una passeggiata di fronte al blu azzurro del Mediterraneo, che si estende lungo le iconiche spiagge di ciottoli.",
-                card4_title: "I Vicoli della Vecchia Nizza",
-                card4_desc: "Pittoresco labirinto di facciate ocra e pastello. Assaggiate assolutamente la socca tradizionale e le panisse in una piazzetta.",
-                sec_practical: "Informazioni pratiche per il vostro soggiorno",
+                card1_desc: "A due passi scendendo verso il mare: famoso per il mercato dei fiori colorato, i prodotti provenzali e gli antiquari il lunedì.",
+                card3_title: "Promenade des Anglais e Spiagge",
+                card3_desc: "Attraversate Cours Saleya per raggiungere subito il lungomare, le spiagge di ciottoli della Baie des Anges e le mitiche sedie blu.",
+                card2_title: "Collina del Castello e Cascata",
+                card2_desc: "Vista mozzafiato sulla Baie des Anges, i tetti ocra della Vecchia Nizza e il porto. Accesso rapido dalle scale Lesage o ascensore gratuito.",
+                card5_title: "Place Masséna e Promenade du Paillon",
+                card5_desc: "Il grande parco urbano con il suo specchio d'acqua rinfrescante, seguito dall'iconica Place Masséna e dalle vie dello shopping.",
+                card6_title: "Place Garibaldi e Porto Lympia",
+                card6_desc: "Quartiere vivace amato dai nizzardi per le terrazze soleggiate, i wine bar, gli antiquari e le barche colorate ormeggiate al porto.",
+                sec_practical: "Info pratiche da Rue Benoît Bunico",
                 wifi_title: "Wi-Fi Appartamento",
-                trans_title: "Trasporti",
-                trans_desc: "Tram L1 (stazione Opéra-Vieille Ville) a 3 minuti per raggiungere la stazione ferroviaria o l'aeroporto.",
+                trans_title: "Trasporti (3-6 min)",
+                trans_desc: "Tram L1 (Cathédrale - Vieille Ville) a 3 min per la stazione. Tram L2 (Garibaldi) a 6 min con collegamento diretto all'aeroporto.",
                 help_title: "Emergenza / Aiuto",
-                help_desc: "In caso di necessità o domande sull'appartamento, non esitate a contattarci direttamente tramite i messaggi di Booking/Airbnb!",
-                footer_text: "Creato con cura per rendere il vostro soggiorno a Nizza indimenticabile ☀️"
+                help_desc: "In caso di necessità o domande sull'appartamento, contattateci direttamente tramite i messaggi di Booking/Airbnb!",
+                footer_text: "Rue Benoît Bunico, Vecchia Nizza • Creato con cura per un soggiorno indimenticabile ☀️"
             },
             es: {
-                top_title: "Guía Exclusiva - Niza",
-                hero_badge: "Especial Casco Antiguo y Alrededores",
+                top_title: "Guía Exclusiva - Rue Benoît Bunico",
+                hero_badge: "Salida: Rue Benoît Bunico • Casco Antiguo",
                 hero_title: "Su Estancia Inolvidable en Niza",
-                hero_subtitle: "Actividades, buenas direcciones, mercados y joyas locales a poca distancia a pie de su alojamiento.",
-                sec_activities: "Imprescindibles cercanos",
-                tag_culture: "Cultura e Historia",
-                tag_view: "Panorámica",
+                hero_subtitle: "Todas las actividades, playas, mercados y buenas direcciones calculadas a pie desde la calle Benoît Bunico.",
+                sec_activities: "A pie desde Rue Benoît Bunico",
+                tag_gastronomy: "Gastronomía y Callejuelas",
+                tag_coup_coeur: "Favorito • Pan Bagnat",
+                tag_culture: "Cultura y Mercado",
                 tag_relax: "Relajación y Mar",
-                tag_gastronomy: "Gastronomía",
-                dist_2min:
+                tag_view: "Panorámica",
+                tag_shopping: "Compras y Parque",
+                tag_port: "Ocio y Puerto",
+                dist_0min: "Aquí mismo (0 min • 50 m)",
+                dist_1min: "1 min a pie (80 m)",
+                dist_2min: "2 min a pie (180 m)",
+                dist_4min: "4 min a pie (350 m)",
+                dist_5min: "5 min a pie (400 m)",
+                dist_6min: "6 min a pie (450 m)",
+                dist_8min: "8 min a pie (650 m)",
+                card4_title: "Corazón del Casco Antiguo y Place Rossetti",
+                card4_desc: "¡Está en pleno centro histórico! Pruebe la socca tradicional, las panisse y los famosos helados artesanales de la Place Rossetti justo al lado.",
+                card_felix_title: "Chez Félix — El auténtico Pan Bagnat",
+                card_felix_desc: "A dos pasos del apartamento, no se pierda Félix para disfrutar de un auténtico Pan Bagnat nizardo generoso y tradicional. ¡Ideal para llevar a la playa!",
+                card1_title: "Cours Saleya y su Mercado",
+                card1_desc: "A dos pasos bajando hacia el mar: famoso por su colorido mercado de flores, productos provenzales y antigüedades los lunes.",
+                card3_title: "Paseo de los Ingleses y Playas",
+                card3_desc: "Cruce Cours Saleya para llegar de inmediato al paseo marítimo, las playas de guijarros y las míticas sillas azules.",
+                card2_title: "Colina del Castillo y Cascada",
+                card2_desc: "Vista impresionante de la Bahía de los Ángeles, los tejados ocres y el puerto. Acceso rápido por las escaleras Lesage o ascensor gratuito.",
+                card5_title: "Place Masséna y Promenade du Paillon",
+                card5_desc: "El gran parque urbano con su espejo de agua refrescante, seguido de la emblemática Place Masséna y las calles comerciales.",
+                card6_title: "Place Garibaldi y Puerto Lympia",
+                card6_desc: "Barrio animado preferido por los locales por sus terrazas soleadas, bares de vinos, anticuarios y barcos coloridos en el puerto.",
+                sec_practical: "Información práctica desde Rue Benoît Bunico",
+                wifi_title: "Wi-Fi Apartamento",
+                trans_title: "Transporte (3 a 6 min)",
+                trans_desc: "Tranvía L1 (Cathédrale - Vieille Ville) a 3 min para la estación de tren. Tranvía L2 (Garibaldi) a 6 min directo al aeropuerto.",
+                help_title: "Emergencia / Ayuda",
+                help_desc: "Si necesita algo o tiene preguntas sobre el apartamento, contáctenos directamente a través de los mensajes de Booking/Airbnb.",
+                footer_text: "Rue Benoît Bunico, Casco Antiguo • Creado con esmero para una estancia inolvidable ☀️"
+            },
+            de: {
+                top_title: "Exklusiver Guide - Rue Benoît Bunico",
+                hero_badge: "Start: Rue Benoît Bunico • Altstadt Nizza",
+                hero_title: "Ihr unvergesslicher Aufenthalt in Nizza",
+                hero_subtitle: "Alle Aktivitäten, Strände, Märkte und Tipps zu Fuß ab der Rue Benoît Bunico berechnet.",
+                sec_activities: "Zu Fuß ab der Rue Benoît Bunico",
+                tag_gastronomy: "Gastronomie & Gassen",
+                tag_coup_coeur: "Geheimtipp • Pan Bagnat",
+                tag_culture: "Kultur & Markt",
+                tag_relax: "Entspannung & Meer",
+                tag_view: "Panoramablick",
+                tag_shopping: "Shopping & Park",
+                tag_port: "Ausgehen & Hafen",
+                dist_0min: "Direkt vor Ort (0 Min. • 50 m)",
+                dist_1min: "1 Min. zu Fuß (80 m)",
+                dist_2min: "2 Min. zu Fuß (180 m)",
+                dist_4min: "4 Min. zu Fuß (350 m)",
+                dist_5min: "5 Min. zu Fuß (400 m)",
+                dist_6min: "6 Min. zu Fuß (450 m)",
+                dist_8min: "8 Min. zu Fuß (650 m)",
+                card4_title: "Herz der Altstadt & Place Rossetti",
+                card4_desc: "Sie wohnen mitten im historischen Zentrum! Probieren Sie traditionelle Socca, Panisse und das berühmte hausgemachte Eis am Place Rossetti gleich nebenan.",
+                card_felix_title: "Chez Félix — Echter Pan Bagnat",
+                card_felix_desc: "Nur wenige Schritte vom Apartment entfernt: Verpassen Sie nicht Félix für ein authentisches, reichhaltiges Nizzaer Pan Bagnat. Perfekt zum Mitnehmen an den Strand!",
+                card1_title: "Cours Saleya & Blumenmarkt",
+                card1_desc: "Nur wenige Schritte Richtung Meer: berühmt für seinen bunten Blumenmarkt, provenzalische Spezialitäten und den Antiquitätenmarkt am Montag.",
+                card3_title: "Promenade des Anglais & Strände",
+                card3_desc: "Überqueren Sie den Cours Saleya und Sie stehen direkt an der Strandpromenade, den Kieselstränden und den berühmten blauen Stühlen.",
+                card2_title: "Schloßberg & Wasserfall",
+                card2_desc: "Atemberaubender Blick über die Baie des Anges, die Dächer der Altstadt und den Hafen. Schneller Zugang über die Lesage-Treppe oder kostenlosen Aufzug.",
+                card5_title: "Place Masséna & Promenade du Paillon",
+                card5_desc: "Der große Stadtpark mit erfrischendem Wasserspiegel, gefolgt vom berühmten Place Masséna und den Einkaufsstraßen.",
+                card6_title: "Place Garibaldi & Hafen Lympia",
+                card6_desc: "Lebendiges Viertel, beliebt bei Einheimischen für sonnige Terrassen, Weinbars, Antiquitätenläden und bunte Boote im Hafen.",
+                sec_practical: "Praktische Infos ab Rue Benoît Bunico",
+                wifi_title: "WLAN Apartment",
+                trans_title: "Verkehrsmittel (3 bis 6 Min.)",
+                trans_desc: "Tram L1 (Cathédrale - Vieille Ville) in 3 Min. zum Bahnhof. Tram L2 (Garibaldi) in 6 Min. direkt zum Flughafen.",
+                help_title: "Notfall / Hilfe",
+                help_desc: "Bei Fragen zum Apartment kontaktieren Sie uns bitte direkt über die Booking/Airbnb-Nachrichten!",
+                footer_text: "Rue Benoît Bunico, Altstadt Nizza • Mit Sorgfalt für Ihren Aufenthalt erstellt ☀️"
+            },
+            ru: {
+                top_title: "Эксклюзивный гид - Rue Benoît Bunico",
+                hero_badge: "Старт: Rue Benoît Bunico • Старая Ницца",
+                hero_title: "Ваш незабываемый отдых в Ницце",
+                hero_subtitle: "Все развлечения, пляжи, рынки и лучшие места в пешей доступности от улицы Бенуа Бюнико (Rue Benoît Bunico).",
+                sec_activities: "Пешком от Rue Benoît Bunico",
+                tag_gastronomy: "Гастрономия и улочки",
+                tag_coup_coeur: "Рекомендуем • Пан-банья",
+                tag_culture: "Культура и рынок",
+                tag_relax: "Отдых и море",
+                tag_view: "Панорама",
+                tag_shopping: "Шопинг и парк",
+                tag_port: "Кафе и порт",
+                dist_0min: "На месте (0 мин • 50 м)",
+                dist_1min: "1 мин пешком (80 м)",
+                dist_2min: "2 мин пешком (180 м)",
+                dist_4min: "4 мин пешком (350 м)",
+                dist_5min: "5 мин пешком (400 м)",
+                dist_6min: "6 мин пешком (450 м)",
+                dist_8min: "8 мин пешком (650 м)",
+                card4_title: "Сердце Старой Ниццы и площадь Россетти",
+                card4_desc: "Вы находитесь в самом центре исторического квартала! Попробуйте традиционную сокку, панисс и знаменитое мороженое на соседней площади Россетти.",
+                card_felix_title: "Chez Félix — Настоящий Пан-банья",
+                card_felix_desc: "В двух шагах от апартаментов обязательно загляните к Феликсу (Félix), чтобы попробовать настоящий сытный нисуазский сэндвич Пан-банья. Идеально взять с собой на пляж!",
+                card1_title: "Кур Салея и цветочный рынок",
+                card1_desc: "В двух шагах по направлению к морю: знаменит красочным цветочным рынком, провансальскими деликатесами и антиквариатом по понедельникам.",
+                card3_title: "Английская набережная и пляжи",
+                card3_desc: "Перейдите Кур Салея, чтобы сразу выйти к морю, галечным пляжам Бухты Ангелов и знаменитым синим стульям.",
+                card2_title: "Замковая гора и водопад",
+                card2_desc: "Потрясающий вид на Бухту Ангелов, крыши Старой Ниццы и порт. Быстрый подъем по лестнице Лесаж или на бесплатном лифте.",
+                card5_title: "Площадь Массена и парк Пайон",
+                card5_desc: "Большой городской парк с освежающим водным зеркалом, за которым следуют знаменитая площадь Массена и торговые улицы.",
+                card6_title: "Площадь Гарибальди и порт Лимпия",
+                card6_desc: "Оживленный квартал, любимый местными жителями за солнечные террасы, винные бары, антикварные лавки и яркие лодки в порту.",
+                sec_practical: "Полезная информация от Rue Benoît Bunico",
+                wifi_title: "Wi-Fi в апартаментах",
+                trans_title: "Транспорт (3–6 мин)",
+                trans_desc: "Трамвай L1 (Cathédrale - Vieille Ville) в 3 мин до вокзала. Трамвай L2 (Garibaldi) в 6 мин напрямую до аэропорта.",
+                help_title: "Помощь / Экстренно",
+                help_desc: "Если возникнут вопросы по апартаментам, пишите нам напрямую через сообщения Booking/Airbnb!",
+                footer_text: "Rue Benoît Bunico, Старая Ницца • Создано с заботой о вашем отдыхе ☀️"
+            },
+            zh: {
+                top_title: "专属指南 - Rue Benoît Bunico",
+                hero_badge: "出发点：Rue Benoît Bunico • 老尼斯核心区",
+                hero_title: "您在尼斯的难忘假期",
+                hero_subtitle: "从 Benoît Bunico 街出发步行可达的所有景点、海滩、集市与地道好去处。",
+                sec_activities: "从 Rue Benoît Bunico 步行距离",
+                tag_gastronomy: "美食与老街",
+                tag_coup_coeur: "强力推荐 • 尼斯三明治",
+                tag_culture: "文化与集市",
+                tag_relax: "休闲与大海",
+                tag_view: "全景风光",
+                tag_shopping: "购物与公园",
+                tag_port: "夜生活与港口",
+                dist_0min: "就在楼下 (0分钟 • 50米)",
+                dist_1min: "步行 1 分钟 (80米)",
+                dist_2min: "步行 2 分钟 (180米)",
+                dist_4min: "步行 4 分钟 (350米)",
+                dist_5min: "步行 5 分钟 (400米)",
+                dist_6min: "步行 6 分钟 (450米)",
+                dist_8min: "步行 8 分钟 (650米)",
+                card4_title: "老尼斯中心与罗塞蒂广场 (Place Rossetti)",
+                card4_desc: "您正处于历史街区的核心！就在旁边的罗塞蒂广场品尝传统的鹰嘴豆饼 (Socca)、炸面团 (Panisse) 以及著名的手工冰淇淋。",
+                card_felix_title: "Chez Félix — 正宗尼斯 Pan Bagnat 三明治",
+                card_felix_desc: "距离公寓仅几步之遥，千万不要错过 Félix 家地道十足的尼斯特色三明治 (Pan Bagnat)，用料丰富传统，非常适合打包带去海滩享用！",
+                card1_title: "萨雷亚集市 (Cours Saleya)",
+                card1_desc: "朝海边走几步即达：以色彩缤纷的花卉市场、普罗旺斯特产摊位以及周一的古董市场而闻名。",
+                card3_title: "英国人漫步大道与海滩",
+                card3_desc: "穿过萨雷亚集市即可直达海滨、天使湾鹅卵石海滩以及标志性的蓝色座椅。",
+                card2_title: "城堡山与瀑布 (Colline du Château)",
+                card2_desc: "俯瞰天使湾、老尼斯红褐色屋顶和港口的绝佳视野。可通过 Lesage 阶梯或免费电梯快速登顶。",
+                card5_title: "马塞纳广场与帕永绿带公园",
+                card5_desc: "拥有清凉水镜广场的大型城市公园，紧邻标志性的马塞纳广场及主要商业购物街。",
+                card6_title: "加里波第广场与林皮亚港",
+                card6_desc: "深受当地人喜爱的活力街区，拥有阳光露台、葡萄酒吧、古董店以及停泊在港口的彩色传统木船。",
+                sec_practical: "Rue Benoît Bunico 周边实用信息",
+                wifi_title: "公寓无线网络 (Wi-Fi)",
+                trans_title: "交通出行 (3至6分钟)",
+                trans_desc: "步行 3 分钟至电车 L1 线 (Cathédrale - Vieille Ville 站) 可达火车站；步行 6 分钟至 L2 线 (Garibaldi 站) 可直达机场。",
+                help_title: "紧急求助 / 帮助",
+                help_desc: "如果您对公寓有任何疑问或需求，请随时通过 Booking/Airbnb 消息直接与我们联系！",
+                footer_text: "Rue Benoît Bunico, 老尼斯 • 用心打造您的难忘假期 ☀️"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('bg-azure-600', 'text-white');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+            const activeBtn = document.getElementById('btn-' + lang);
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-slate-800', 'text-slate-300');
+                activeBtn.classList.add('bg-azure-600', 'text-white');
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            localStorage.setItem('preferred_lang', lang);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred_lang');
+            if (savedLang && translations[savedLang]) {
+                setLanguage(savedLang);
+            }
+        });
+    </script>
+</body>
+</html>
