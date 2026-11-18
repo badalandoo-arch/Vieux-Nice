@@ -90,16 +90,23 @@
             
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- Carte 1 : Ruelles du Vieux Nice -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
                     <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-700 rounded-full" data-i18n="tag_gastronomy">Gastronomie & Ruelles</span>
-                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_0min">Sur place (0 min • 50 m)</span></span>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQcVfXwmLfzJHcdaXU7-vibWC-5E8pFd6-x-F-HlWH4vPc8zSbISMGwLcNFPB-mzUKDgIZk52g7jy5w_ZE" alt="Place Rossetti, Vieux Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-walking mr-1 text-azure-600"></i> <span data-i18n="dist_0min">Sur place (0 min • 50 m)</span>
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card4_title">Cœur du Vieux Nice & Place Rossetti</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card4_desc">Vous êtes au cœur du quartier historique ! Goûtez la socca traditionnelle, les panisses et les célèbres glaces artisanales de la Place Rossetti juste à côté.</p>
+                        <div class="p-6 pb-4">
+                            <div class="mb-2.5">
+                                <span class="text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-700 rounded-full" data-i18n="tag_gastronomy">Gastronomie & Ruelles</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card4_title">Cœur du Vieux Nice & Place Rossetti</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card4_desc">Vous êtes au cœur du quartier historique ! Goûtez la socca traditionnelle, les panisses et les célèbres glaces artisanales de la Place Rossetti juste à côté.</p>
+                        </div>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-end">
+                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex justify-end">
                         <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+06300+Nice&destination=Place+Rossetti,+06300+Nice&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-azure-700 hover:text-azure-800 bg-azure-50 hover:bg-azure-100 px-3.5 py-2 rounded-xl transition">
                             <i class="fa-solid fa-diamond-turn-right"></i>
                             <span data-i18n="btn_maps">Itinéraire Google Maps</span>
@@ -108,16 +115,23 @@
                 </div>
 
                 <!-- Carte Spécialité : Pan Bagnat chez Félix -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-amber-200 hover:shadow-md transition relative flex flex-col justify-between">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-amber-200 hover:shadow-md transition relative flex flex-col justify-between group">
                     <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold px-3 py-1 bg-amber-100 text-amber-800 rounded-full" data-i18n="tag_coup_coeur">Coup de cœur • Pan Bagnat</span>
-                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_1min">1 min à pied (80 m)</span></span>
+                        <div class="relative h-48 overflow-hidden bg-amber-50">
+                            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTvfa2UhfT_PC7xx5tHAV4CHQM433Qz2KXNIoK3TW9b3-s9cykJW1HFmhLlta-rgmlGgNM1zzolUnjR9vA" alt="Pan Bagnat Niçois" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-walking mr-1 text-azure-600"></i> <span data-i18n="dist_1min">1 min à pied (80 m)</span>
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card_felix_title">Chez Félix — Le vrai Pan Bagnat</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card_felix_desc">À deux pas de l'appartement, ne manquez pas Félix pour déguster un authentique Pan Bagnat niçois généreux et préparé dans les règles de l'art. Idéal à emporter sur la plage !</p>
+                        <div class="p-6 pb-4">
+                            <div class="mb-2.5">
+                                <span class="text-xs font-semibold px-3 py-1 bg-amber-100 text-amber-800 rounded-full" data-i18n="tag_coup_coeur">Coup de cœur • Pan Bagnat</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card_felix_title">Chez Félix — Le vrai Pan Bagnat</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card_felix_desc">À deux pas de l'appartement, ne manquez pas Félix pour déguster un authentique Pan Bagnat niçois généreux et préparé dans les règles de l'art. Idéal à emporter sur la plage !</p>
+                        </div>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-amber-100 flex justify-end">
+                    <div class="px-6 pb-6 pt-3 border-t border-amber-100 flex justify-end">
                         <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+06300+Nice&destination=Chez+Felix+Vieux+Nice,+06300+Nice&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-800 hover:text-amber-900 bg-amber-100/80 hover:bg-amber-200/80 px-3.5 py-2 rounded-xl transition">
                             <i class="fa-solid fa-diamond-turn-right"></i>
                             <span data-i18n="btn_maps">Itinéraire Google Maps</span>
@@ -126,16 +140,23 @@
                 </div>
 
                 <!-- Carte 2 : Cours Saleya -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
                     <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold px-3 py-1 bg-azure-50 text-azure-700 rounded-full" data-i18n="tag_culture">Culture & Marché</span>
-                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_2min">2 min à pied (180 m)</span></span>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTa7ISUM8XFcPxibOqNlC5OnKTidMwWIrTSyEP0MdqM02lRnzzCx2d-TopnNQbc6AvRrnr210l-mEQWBeQ" alt="Marché aux fleurs du Cours Saleya, Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-walking mr-1 text-azure-600"></i> <span data-i18n="dist_2min">2 min à pied (180 m)</span>
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card1_title">Le Cours Saleya & son Marché</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card1_desc">À deux pas en descendant vers la mer : célèbre pour son marché aux fleurs coloré, ses étals de produits provençaux et ses antiquaires le lundi.</p>
+                        <div class="p-6 pb-4">
+                            <div class="mb-2.5">
+                                <span class="text-xs font-semibold px-3 py-1 bg-azure-50 text-azure-700 rounded-full" data-i18n="tag_culture">Culture & Marché</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card1_title">Le Cours Saleya & son Marché</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card1_desc">À deux pas en descendant vers la mer : célèbre pour son marché aux fleurs coloré, ses étals de produits provençaux et ses antiquaires le lundi.</p>
+                        </div>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-end">
+                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex justify-end">
                         <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+06300+Nice&destination=Cours+Saleya,+06300+Nice&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-azure-700 hover:text-azure-800 bg-azure-50 hover:bg-azure-100 px-3.5 py-2 rounded-xl transition">
                             <i class="fa-solid fa-diamond-turn-right"></i>
                             <span data-i18n="btn_maps">Itinéraire Google Maps</span>
@@ -144,16 +165,23 @@
                 </div>
 
                 <!-- Carte 3 : Promenade des Anglais & Plages -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
                     <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold px-3 py-1 bg-blue-50 text-blue-700 rounded-full" data-i18n="tag_relax">Détente & Mer</span>
-                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_4min">4 min à pied (350 m)</span></span>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTKHZVapf8VRLuFnbf3VUdER9GQ9V4eE_QLPSxUYKF46pYnSO1nikI3wPztE-lwXViV_1tTeqgF_1j1Uug" alt="Chaises bleues sur la Promenade des Anglais, Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-walking mr-1 text-azure-600"></i> <span data-i18n="dist_4min">4 min à pied (350 m)</span>
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card3_title">La Promenade des Anglais & Plages</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card3_desc">Traversez le Cours Saleya pour rejoindre immédiatement le bord de mer, les plages de galets de la Baie des Anges et les mythiques chaises bleues.</p>
+                        <div class="p-6 pb-4">
+                            <div class="mb-2.5">
+                                <span class="text-xs font-semibold px-3 py-1 bg-blue-50 text-blue-700 rounded-full" data-i18n="tag_relax">Détente & Mer</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card3_title">La Promenade des Anglais & Plages</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card3_desc">Traversez le Cours Saleya pour rejoindre immédiatement le bord de mer, les plages de galets de la Baie des Anges et les mythiques chaises bleues.</p>
+                        </div>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-end">
+                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex justify-end">
                         <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+06300+Nice&destination=Quai+des+%C3%89tats-Unis,+06300+Nice&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-azure-700 hover:text-azure-800 bg-azure-50 hover:bg-azure-100 px-3.5 py-2 rounded-xl transition">
                             <i class="fa-solid fa-diamond-turn-right"></i>
                             <span data-i18n="btn_maps">Itinéraire Google Maps</span>
@@ -162,16 +190,23 @@
                 </div>
 
                 <!-- Carte 4 : Colline du Château -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
                     <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full" data-i18n="tag_view">Panoramique</span>
-                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_5min">5 min à pied (400 m)</span></span>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTuw3hBOmUBrsTUFVvkYGwdRWIvAJYKb2gHcQxHaCWjM0y0ydE-jacyFFwR8fnpEvw-sTQzsJeH1fXNuwI" alt="Cascade de la Colline du Château, Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-walking mr-1 text-azure-600"></i> <span data-i18n="dist_5min">5 min à pied (400 m)</span>
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card2_title">La Colline du Château & Cascade</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card2_desc">Vue imprenable sur la Baie des Anges, les toits ocre du Vieux Nice et le port. Accès rapide par les escaliers Lesage ou l'ascenseur gratuit.</p>
+                        <div class="p-6 pb-4">
+                            <div class="mb-2.5">
+                                <span class="text-xs font-semibold px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full" data-i18n="tag_view">Panoramique</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card2_title">La Colline du Château & Cascade</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card2_desc">Vue imprenable sur la Baie des Anges, les toits ocre du Vieux Nice et le port. Accès rapide par les escaliers Lesage ou l'ascenseur gratuit.</p>
+                        </div>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-end">
+                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex justify-end">
                         <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+06300+Nice&destination=Colline+du+Ch%C3%A2teau,+06300+Nice&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-azure-700 hover:text-azure-800 bg-azure-50 hover:bg-azure-100 px-3.5 py-2 rounded-xl transition">
                             <i class="fa-solid fa-diamond-turn-right"></i>
                             <span data-i18n="btn_maps">Itinéraire Google Maps</span>
@@ -180,16 +215,23 @@
                 </div>
 
                 <!-- Carte 5 : Place Masséna & Coulée Verte -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
                     <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold px-3 py-1 bg-purple-50 text-purple-700 rounded-full" data-i18n="tag_shopping">Shopping & Parc</span>
-                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_6min">6 min à pied (450 m)</span></span>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcStCsFdzR-n5gsP9IoKeVElsAKts1AmAAvx6i92TlAWwtbvtTiksB7YnGy6bpzc8wPdvo6cKnDxLTRDHP4" alt="Fontaine du Soleil, Place Masséna, Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-walking mr-1 text-azure-600"></i> <span data-i18n="dist_6min">6 min à pied (450 m)</span>
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card5_title">Place Masséna & Promenade du Paillon</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card5_desc">Le grand parc urbain avec son miroir d'eau rafraîchissant, suivi de l'emblématique Place Masséna et des rues commerçantes (avenue Jean Médecin).</p>
+                        <div class="p-6 pb-4">
+                            <div class="mb-2.5">
+                                <span class="text-xs font-semibold px-3 py-1 bg-purple-50 text-purple-700 rounded-full" data-i18n="tag_shopping">Shopping & Parc</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card5_title">Place Masséna & Promenade du Paillon</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card5_desc">Le grand parc urbain avec son miroir d'eau rafraîchissant, suivi de l'emblématique Place Masséna et des rues commerçantes (avenue Jean Médecin).</p>
+                        </div>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-end">
+                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex justify-end">
                         <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+06300+Nice&destination=Place+Mass%C3%A9na,+06000+Nice&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-azure-700 hover:text-azure-800 bg-azure-50 hover:bg-azure-100 px-3.5 py-2 rounded-xl transition">
                             <i class="fa-solid fa-diamond-turn-right"></i>
                             <span data-i18n="btn_maps">Itinéraire Google Maps</span>
@@ -198,16 +240,23 @@
                 </div>
 
                 <!-- Carte 6 : Port Lympia & Place Garibaldi -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition md:col-span-2 flex flex-col justify-between">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition md:col-span-2 flex flex-col justify-between group">
                     <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold px-3 py-1 bg-rose-50 text-rose-700 rounded-full" data-i18n="tag_port">Sorties & Port</span>
-                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_8min">8 min à pied (650 m)</span></span>
+                        <div class="relative h-56 overflow-hidden bg-slate-200">
+                            <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTknQUV_oQCZplY8MTTaA5hxxXunnQ4j6_5ye0HIVib726oAiWAg_6dhO8ERLOr2Vs10DI2DWiMhsd9yvU" alt="Pointus colorés au Port Lympia, Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-walking mr-1 text-azure-600"></i> <span data-i18n="dist_8min">8 min à pied (650 m)</span>
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card6_title">Place Garibaldi & Port Lympia</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card6_desc">Quartier animé prisé des locaux pour ses terrasses ensoleillées, ses bars à vin, ses antiquaires et ses pointus colorés amarrés au port.</p>
+                        <div class="p-6 pb-4">
+                            <div class="mb-2.5">
+                                <span class="text-xs font-semibold px-3 py-1 bg-rose-50 text-rose-700 rounded-full" data-i18n="tag_port">Sorties & Port</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card6_title">Place Garibaldi & Port Lympia</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card6_desc">Quartier animé prisé des locaux pour ses terrasses ensoleillées, ses bars à vin, ses antiquaires et ses pointus colorés amarrés au port.</p>
+                        </div>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap gap-2.5 justify-end">
+                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex flex-wrap gap-2.5 justify-end">
                         <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+06300+Nice&destination=Place+Garibaldi,+06300+Nice&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-azure-700 hover:text-azure-800 bg-azure-50 hover:bg-azure-100 px-3.5 py-2 rounded-xl transition">
                             <i class="fa-solid fa-diamond-turn-right"></i>
                             <span data-i18n="btn_maps_garibaldi">Place Garibaldi (Maps)</span>
