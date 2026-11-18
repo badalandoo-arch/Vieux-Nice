@@ -90,73 +90,177 @@
             
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- Carte 1 : Ruelles du Vieux Nice -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-700 rounded-full" data-i18n="tag_gastronomy">Gastronomie & Ruelles</span>
-                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_0min">Sur place (0 min • 50 m)</span></span>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-700 rounded-full" data-i18n="tag_gastronomy">Gastronomie & Ruelles</span>
+                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_0min">Sur place (0 min • 50 m)</span></span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card4_title">Cœur du Vieux Nice & Place Rossetti</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="card4_desc">Vous êtes au cœur du quartier historique ! Goûtez la socca traditionnelle, les panisses et les célèbres glaces artisanales de la Place Rossetti juste à côté.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card4_title">Cœur du Vieux Nice & Place Rossetti</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card4_desc">Vous êtes au cœur du quartier historique ! Goûtez la socca traditionnelle, les panisses et les célèbres glaces artisanales de la Place Rossetti juste à côté.</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+Nice,+France&destination=Place+Rossetti,+Nice,+France&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-azure-600 hover:text-azure-800 transition">
+                        <i class="fa-solid fa-map-location-dot mr-1.5"></i> <span data-i18n="btn_map">Voir le trajet à pied sur Google Maps</span>
+                    </a>
                 </div>
 
                 <!-- Carte Spécialité : Pan Bagnat chez Félix -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-amber-200 hover:shadow-md transition relative">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-semibold px-3 py-1 bg-amber-100 text-amber-800 rounded-full" data-i18n="tag_coup_coeur">Coup de cœur • Pan Bagnat</span>
-                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_1min">1 min à pied (80 m)</span></span>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-amber-200 hover:shadow-md transition relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-3 py-1 bg-amber-100 text-amber-800 rounded-full" data-i18n="tag_coup_coeur">Coup de cœur • Pan Bagnat</span>
+                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_1min">1 min à pied (80 m)</span></span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card_felix_title">Chez Félix — Le vrai Pan Bagnat</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="card_felix_desc">À deux pas de l'appartement, ne manquez pas Félix pour déguster un authentique Pan Bagnat niçois généreux et préparé dans les règles de l'art. Idéal à emporter sur la plage !</p>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card_felix_title">Chez Félix — Le vrai Pan Bagnat</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card_felix_desc">À deux pas de l'appartement, ne manquez pas Félix pour déguster un authentique Pan Bagnat niçois généreux et préparé dans les règles de l'art. Idéal à emporter sur la plage !</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+Nice,+France&destination=Chez+F%C3%A9lix+Vieux+Nice,+Nice,+France&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-azure-600 hover:text-azure-800 transition">
+                        <i class="fa-solid fa-map-location-dot mr-1.5"></i> <span data-i18n="btn_map">Voir le trajet à pied sur Google Maps</span>
+                    </a>
                 </div>
 
                 <!-- Carte 2 : Cours Saleya -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-semibold px-3 py-1 bg-azure-50 text-azure-700 rounded-full" data-i18n="tag_culture">Culture & Marché</span>
-                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_2min">2 min à pied (180 m)</span></span>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-3 py-1 bg-azure-50 text-azure-700 rounded-full" data-i18n="tag_culture">Culture & Marché</span>
+                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_2min">2 min à pied (180 m)</span></span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card1_title">Le Cours Saleya & son Marché</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="card1_desc">À deux pas en descendant vers la mer : célèbre pour son marché aux fleurs coloré, ses étals de produits provençaux et ses antiquaires le lundi.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card1_title">Le Cours Saleya & son Marché</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card1_desc">À deux pas en descendant vers la mer : célèbre pour son marché aux fleurs coloré, ses étals de produits provençaux et ses antiquaires le lundi.</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+Nice,+France&destination=Cours+Saleya,+Nice,+France&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-azure-600 hover:text-azure-800 transition">
+                        <i class="fa-solid fa-map-location-dot mr-1.5"></i> <span data-i18n="btn_map">Voir le trajet à pied sur Google Maps</span>
+                    </a>
                 </div>
 
                 <!-- Carte 3 : Promenade des Anglais & Plages -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-semibold px-3 py-1 bg-blue-50 text-blue-700 rounded-full" data-i18n="tag_relax">Détente & Mer</span>
-                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_4min">4 min à pied (350 m)</span></span>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-3 py-1 bg-blue-50 text-blue-700 rounded-full" data-i18n="tag_relax">Détente & Mer</span>
+                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_4min">4 min à pied (350 m)</span></span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card3_title">La Promenade des Anglais & Plages</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="card3_desc">Traversez le Cours Saleya pour rejoindre immédiatement le bord de mer, les plages de galets de la Baie des Anges et les mythiques chaises bleues.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card3_title">La Promenade des Anglais & Plages</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card3_desc">Traversez le Cours Saleya pour rejoindre immédiatement le bord de mer, les plages de galets de la Baie des Anges et les mythiques chaises bleues.</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+Nice,+France&destination=Promenade+des+Anglais,+Nice,+France&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-azure-600 hover:text-azure-800 transition">
+                        <i class="fa-solid fa-map-location-dot mr-1.5"></i> <span data-i18n="btn_map">Voir le trajet à pied sur Google Maps</span>
+                    </a>
                 </div>
 
                 <!-- Carte 4 : Colline du Château -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-semibold px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full" data-i18n="tag_view">Panoramique</span>
-                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_5min">5 min à pied (400 m)</span></span>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full" data-i18n="tag_view">Panoramique</span>
+                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_5min">5 min à pied (400 m)</span></span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card2_title">La Colline du Château & Cascade</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="card2_desc">Vue imprenable sur la Baie des Anges, les toits ocre du Vieux Nice et le port. Accès rapide par les escaliers Lesage ou l'ascenseur gratuit.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card2_title">La Colline du Château & Cascade</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card2_desc">Vue imprenable sur la Baie des Anges, les toits ocre du Vieux Nice et le port. Accès rapide par les escaliers Lesage ou l'ascenseur gratuit.</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+Nice,+France&destination=Colline+du+Ch%C3%A2teau,+Nice,+France&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-azure-600 hover:text-azure-800 transition">
+                        <i class="fa-solid fa-map-location-dot mr-1.5"></i> <span data-i18n="btn_map">Voir le trajet à pied sur Google Maps</span>
+                    </a>
                 </div>
 
                 <!-- Carte 5 : Place Masséna & Coulée Verte -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-semibold px-3 py-1 bg-purple-50 text-purple-700 rounded-full" data-i18n="tag_shopping">Shopping & Parc</span>
-                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_6min">6 min à pied (450 m)</span></span>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-3 py-1 bg-purple-50 text-purple-700 rounded-full" data-i18n="tag_shopping">Shopping & Parc</span>
+                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_6min">6 min à pied (450 m)</span></span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card5_title">Place Masséna & Promenade du Paillon</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="card5_desc">Le grand parc urbain avec son miroir d'eau rafraîchissant, suivi de l'emblématique Place Masséna et des rues commerçantes (avenue Jean Médecin).</p>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card5_title">Place Masséna & Promenade du Paillon</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card5_desc">Le grand parc urbain avec son miroir d'eau rafraîchissant, suivi de l'emblématique Place Masséna et des rues commerçantes (avenue Jean Médecin).</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+Nice,+France&destination=Place+Mass%C3%A9na,+Nice,+France&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-azure-600 hover:text-azure-800 transition">
+                        <i class="fa-solid fa-map-location-dot mr-1.5"></i> <span data-i18n="btn_map">Voir le trajet à pied sur Google Maps</span>
+                    </a>
                 </div>
 
                 <!-- Carte 6 : Port Lympia & Place Garibaldi -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition md:col-span-2">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-semibold px-3 py-1 bg-rose-50 text-rose-700 rounded-full" data-i18n="tag_port">Sorties & Port</span>
-                        <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_8min">8 min à pied (650 m)</span></span>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition md:col-span-2 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-3 py-1 bg-rose-50 text-rose-700 rounded-full" data-i18n="tag_port">Sorties & Port</span>
+                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_8min">8 min à pied (650 m)</span></span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card6_title">Place Garibaldi & Port Lympia</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="card6_desc">Quartier animé prisé des locaux pour ses terrasses ensoleillées, ses bars à vin, ses antiquaires et ses pointus colorés amarrés au port.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card6_title">Place Garibaldi & Port Lympia</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card6_desc">Quartier animé prisé des locaux pour ses terrasses ensoleillées, ses bars à vin, ses antiquaires et ses pointus colorés amarrés au port.</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+Nice,+France&destination=Place+Garibaldi,+Nice,+France&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-azure-600 hover:text-azure-800 transition">
+                        <i class="fa-solid fa-map-location-dot mr-1.5"></i> <span data-i18n="btn_map">Voir le trajet à pied sur Google Maps</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- NOUVELLE SECTION : NOS BONNES TABLES & RESTAURANTS -->
+        <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                <i class="fa-solid fa-utensils text-med-600 mr-3"></i> <span data-i18n="sec_restaurants">Nos Bonnes Tables & Restaurants</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Restaurant 1 : La Favola -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-3 py-1 bg-orange-50 text-orange-700 rounded-full" data-i18n="tag_italian_generous">Italien & Généreux</span>
+                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_5min_450">5 min à pied (450 m)</span></span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="rest_favola_title">La Favola — Cours Saleya</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="rest_favola_desc">Une institution incontournable du Cours Saleya, célèbre pour ses assiettes et plats italiens aux proportions spectaculaires (pâtes, pizzas) dans une ambiance animée et chaleureuse.</p>
+                    </div>
+                    <a href="https://www.google.com/maps/dir/Rue+Beno%C3%AEt+Bunico,+Nice,+France/La+Favola,+13+Cours+Saleya,+Nice,+France/data=!4m14!4m13!1m5!1m1!19sChIJ0RMhu7zazRIRa6OSRS2Um1g!2m2!1d7.2768599!2d43.6972398!1m5!1m1!19sChIJF7GuAaPazRIRBr6thVAlsy4!2m2!1d7.2737279999999993!2d43.6958589!3e2" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-azure-600 hover:text-azure-800 transition">
+                        <i class="fa-solid fa-map-location-dot mr-1.5"></i> <span data-i18n="btn_map">Voir le trajet à pied sur Google Maps</span>
+                    </a>
+                </div>
+
+                <!-- Restaurant 2 : La Voglia -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-700 rounded-full" data-i18n="tag_italian_chic">Italien & Terrasse</span>
+                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_6min_450">6 min à pied (450 m)</span></span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="rest_voglia_title">La Voglia — Près de l'Opéra</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="rest_voglia_desc">Cuisine italienne raffinée et savoureuse servie dans un cadre élégant au design industriel, avec une belle terrasse ensoleillée à deux pas de l'Opéra de Nice.</p>
+                    </div>
+                    <a href="https://www.google.com/maps/dir/Rue+Beno%C3%AEt+Bunico,+Nice,+France/La+Voglia,+2+Rue+Saint-Fran%C3%A7ois+de+Paule,+Nice,+France/data=!4m14!4m13!1m5!1m1!19sChIJ0RMhu7zazRIRa6OSRS2Um1g!2m2!1d7.2768599!2d43.6972398!1m5!1m1!19sChIJYVrTUqLazRIRN7nsPv8ZPKM!2m2!1d7.2733089999999994!2d43.695555!3e2" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-azure-600 hover:text-azure-800 transition">
+                        <i class="fa-solid fa-map-location-dot mr-1.5"></i> <span data-i18n="btn_map">Voir le trajet à pied sur Google Maps</span>
+                    </a>
+                </div>
+
+                <!-- Restaurant 3 : Di Più -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-3 py-1 bg-sky-50 text-sky-700 rounded-full" data-i18n="tag_sea_view">Vue Mer • Italien</span>
+                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_7min_500">7 min à pied (500 m)</span></span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="rest_dipiu_title">Di Più — Face à la Baie des Anges</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="rest_dipiu_desc">Superbe terrasse face à la mer sur le Quai des États-Unis, idéale pour déguster pizzas, fruits de mer et spécialités italiennes avec une vue panoramique sur la baie.</p>
+                    </div>
+                    <a href="https://www.google.com/maps/dir/Rue+Beno%C3%AEt+Bunico,+Nice,+France/Di+Pi%C3%B9+-+Restaurant+italien+Nice,+85+Quai+des+%C3%89tats-Unis,+Nice,+France/data=!4m14!4m13!1m5!1m1!19sChIJ0RMhu7zazRIRa6OSRS2Um1g!2m2!1d7.2768599!2d43.6972398!1m5!1m1!19sChIJW1zWOaLazRIRAG9Ns_CXkxw!2m2!1d7.2731226!2d43.6952761!3e2" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-azure-600 hover:text-azure-800 transition">
+                        <i class="fa-solid fa-map-location-dot mr-1.5"></i> <span data-i18n="btn_map">Voir le trajet à pied sur Google Maps</span>
+                    </a>
+                </div>
+
+                <!-- Restaurant 4 : Le Québec -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-3 py-1 bg-red-50 text-red-700 rounded-full" data-i18n="tag_brasserie">Brasserie & Grill</span>
+                            <span class="text-xs font-medium text-azure-700 bg-azure-50 px-2.5 py-1 rounded-full"><i class="fa-solid fa-walking mr-1"></i> <span data-i18n="dist_15min_1km">15 min à pied (1,1 km)</span></span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="rest_quebec_title">Le Québec — Zone Piétonne</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4" data-i18n="rest_quebec_desc">Brasserie chaleureuse aux accents canadiens située rue Masséna, proposant des plats copieux (burgers, grillades, spécialités montagnardes) dans un décor boisé convivial.</p>
+                    </div>
+                    <a href="https://www.google.com/maps/dir/Rue+Beno%C3%AEt+Bunico,+Nice,+France/Le+Qu%C3%A9bec,+43+Rue+Massena,+Nice,+France/data=!4m14!4m13!1m5!1m1!19sChIJ0RMhu7zazRIRa6OSRS2Um1g!2m2!1d7.2768599!2d43.6972398!1m5!1m1!19sChIJw7OtgqDazRIRmVjd9Jf8v9Q!2m2!1d7.2653734!2d43.696803599999996!3e2" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-azure-600 hover:text-azure-800 transition">
+                        <i class="fa-solid fa-map-location-dot mr-1.5"></i> <span data-i18n="btn_map">Voir le trajet à pied sur Google Maps</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -199,6 +303,8 @@
                 hero_title: "Votre Séjour Inoubliable à Nice",
                 hero_subtitle: "Toutes les activités, plages, marchés et bonnes adresses calculés à pied depuis la rue Benoît Bunico.",
                 sec_activities: "À pied depuis la rue Benoît Bunico",
+                sec_restaurants: "Nos Bonnes Tables & Restaurants",
+                btn_map: "Voir le trajet à pied sur Google Maps",
                 tag_gastronomy: "Gastronomie & Ruelles",
                 tag_coup_coeur: "Coup de cœur • Pan Bagnat",
                 tag_culture: "Culture & Marché",
@@ -206,13 +312,21 @@
                 tag_view: "Panoramique",
                 tag_shopping: "Shopping & Parc",
                 tag_port: "Sorties & Port",
+                tag_italian_generous: "Italien & Généreux",
+                tag_italian_chic: "Italien & Terrasse",
+                tag_sea_view: "Vue Mer • Italien",
+                tag_brasserie: "Brasserie & Grill",
                 dist_0min: "Sur place (0 min • 50 m)",
                 dist_1min: "1 min à pied (80 m)",
                 dist_2min: "2 min à pied (180 m)",
                 dist_4min: "4 min à pied (350 m)",
                 dist_5min: "5 min à pied (400 m)",
+                dist_5min_450: "5 min à pied (450 m)",
                 dist_6min: "6 min à pied (450 m)",
+                dist_6min_450: "6 min à pied (450 m)",
+                dist_7min_500: "7 min à pied (500 m)",
                 dist_8min: "8 min à pied (650 m)",
+                dist_15min_1km: "15 min à pied (1,1 km)",
                 card4_title: "Cœur du Vieux Nice & Place Rossetti",
                 card4_desc: "Vous êtes au cœur du quartier historique ! Goûtez la socca traditionnelle, les panisses et les célèbres glaces artisanales de la Place Rossetti juste à côté.",
                 card_felix_title: "Chez Félix — Le vrai Pan Bagnat",
@@ -227,6 +341,14 @@
                 card5_desc: "Le grand parc urbain avec son miroir d'eau rafraîchissant, suivi de l'emblématique Place Masséna et des rues commerçantes (avenue Jean Médecin).",
                 card6_title: "Place Garibaldi & Port Lympia",
                 card6_desc: "Quartier animé prisé des locaux pour ses terrasses ensoleillées, ses bars à vin, ses antiquaires et ses pointus colorés amarrés au port.",
+                rest_favola_title: "La Favola — Cours Saleya",
+                rest_favola_desc: "Une institution incontournable du Cours Saleya, célèbre pour ses assiettes et plats italiens aux proportions spectaculaires (pâtes, pizzas) dans une ambiance animée et chaleureuse.",
+                rest_voglia_title: "La Voglia — Près de l'Opéra",
+                rest_voglia_desc: "Cuisine italienne raffinée et savoureuse servie dans un cadre élégant au design industriel, avec une belle terrasse ensoleillée à deux pas de l'Opéra de Nice.",
+                rest_dipiu_title: "Di Più — Face à la Baie des Anges",
+                rest_dipiu_desc: "Superbe terrasse face à la mer sur le Quai des États-Unis, idéale pour déguster pizzas, fruits de mer et spécialités italiennes avec une vue panoramique sur la baie.",
+                rest_quebec_title: "Le Québec — Zone Piétonne",
+                rest_quebec_desc: "Brasserie chaleureuse aux accents canadiens située rue Masséna, proposant des plats copieux (burgers, grillades, spécialités montagnardes) dans un décor boisé convivial.",
                 sec_practical: "Infos pratiques depuis la rue Benoît Bunico",
                 wifi_title: "Wi-Fi Appartement",
                 trans_title: "Transports (3 à 6 min)",
@@ -241,6 +363,8 @@
                 hero_title: "Your Unforgettable Stay in Nice",
                 hero_subtitle: "All activities, beaches, markets and great local addresses measured on foot from Rue Benoît Bunico.",
                 sec_activities: "Walking Distances from Rue Benoît Bunico",
+                sec_restaurants: "Our Favorite Restaurants & Dining",
+                btn_map: "View walking route on Google Maps",
                 tag_gastronomy: "Gastronomy & Alleys",
                 tag_coup_coeur: "Local Favorite • Pan Bagnat",
                 tag_culture: "Culture & Market",
@@ -248,13 +372,21 @@
                 tag_view: "Panoramic",
                 tag_shopping: "Shopping & Park",
                 tag_port: "Nightlife & Port",
+                tag_italian_generous: "Generous Italian",
+                tag_italian_chic: "Chic Italian & Terrace",
+                tag_sea_view: "Sea View • Italian",
+                tag_brasserie: "Brasserie & Grill",
                 dist_0min: "Right outside (0 min • 50 m)",
                 dist_1min: "1 min walk (80 m)",
                 dist_2min: "2 min walk (180 m)",
                 dist_4min: "4 min walk (350 m)",
                 dist_5min: "5 min walk (400 m)",
+                dist_5min_450: "5 min walk (450 m)",
                 dist_6min: "6 min walk (450 m)",
+                dist_6min_450: "6 min walk (450 m)",
+                dist_7min_500: "7 min walk (500 m)",
                 dist_8min: "8 min walk (650 m)",
+                dist_15min_1km: "15 min walk (1.1 km)",
                 card4_title: "Heart of Old Nice & Place Rossetti",
                 card4_desc: "You are right in the historic center! Try traditional socca, panisse, and the famous artisanal ice creams at Place Rossetti just steps away.",
                 card_felix_title: "Chez Félix — Authentic Pan Bagnat",
@@ -269,6 +401,14 @@
                 card5_desc: "The large urban park with its refreshing water mirror, followed by iconic Place Masséna and main shopping streets (Avenue Jean Médecin).",
                 card6_title: "Place Garibaldi & Port Lympia",
                 card6_desc: "Lively neighborhood loved by locals for its sunny terraces, wine bars, antique shops, and colorful traditional boats moored in the port.",
+                rest_favola_title: "La Favola — Cours Saleya",
+                rest_favola_desc: "A Cours Saleya institution famous for its generously sized Italian dishes (pasta, pizzas) served in a lively, warm atmosphere.",
+                rest_voglia_title: "La Voglia — Near the Opera",
+                rest_voglia_desc: "Refined, flavorful Italian cuisine in a stylish industrial-chic setting with a lovely sunny terrace just steps from the Nice Opera House.",
+                rest_dipiu_title: "Di Più — Facing Baie des Anges",
+                rest_dipiu_desc: "Stunning seafront terrace on Quai des États-Unis, ideal for enjoying pizzas, seafood, and Italian specialties with panoramic bay views.",
+                rest_quebec_title: "Le Québec — Pedestrian Zone",
+                rest_quebec_desc: "Cozy Canadian-inspired brasserie on Rue Masséna offering hearty dishes (burgers, grilled meats, mountain specialties) in a warm wooden decor.",
                 sec_practical: "Practical Info from Rue Benoît Bunico",
                 wifi_title: "Apartment Wi-Fi",
                 trans_title: "Transport (3 to 6 min)",
@@ -283,6 +423,8 @@
                 hero_title: "Il Tuo Soggiorno Indimenticabile a Nizza",
                 hero_subtitle: "Tutte le attività, spiagge, mercati e ottimi indirizzi calcolati a piedi da Rue Benoît Bunico.",
                 sec_activities: "A piedi da Rue Benoît Bunico",
+                sec_restaurants: "I Nostri Ristoranti Consigliati",
+                btn_map: "Vedi il percorso a piedi su Google Maps",
                 tag_gastronomy: "Gastronomia e Vicoli",
                 tag_coup_coeur: "Consigliato • Pan Bagnat",
                 tag_culture: "Cultura e Mercato",
@@ -290,13 +432,21 @@
                 tag_view: "Panoramica",
                 tag_shopping: "Shopping e Parco",
                 tag_port: "Locali e Porto",
+                tag_italian_generous: "Italiano e Abbondante",
+                tag_italian_chic: "Italiano e Terrazza",
+                tag_sea_view: "Vista Mare • Italiano",
+                tag_brasserie: "Brasserie e Grill",
                 dist_0min: "Sul posto (0 min • 50 m)",
                 dist_1min: "1 min a piedi (80 m)",
                 dist_2min: "2 min a piedi (180 m)",
                 dist_4min: "4 min a piedi (350 m)",
                 dist_5min: "5 min a piedi (400 m)",
+                dist_5min_450: "5 min a piedi (450 m)",
                 dist_6min: "6 min a piedi (450 m)",
+                dist_6min_450: "6 min a piedi (450 m)",
+                dist_7min_500: "7 min a piedi (500 m)",
                 dist_8min: "8 min a piedi (650 m)",
+                dist_15min_1km: "15 min a piedi (1,1 km)",
                 card4_title: "Cuore della Vecchia Nizza e Place Rossetti",
                 card4_desc: "Siete nel cuore del centro storico! Assaggiate la socca tradizionale, le panisse e i famosi gelati artigianali di Place Rossetti proprio accanto.",
                 card_felix_title: "Chez Félix — Il vero Pan Bagnat",
@@ -311,6 +461,14 @@
                 card5_desc: "Il grande parco urbano con il suo specchio d'acqua rinfrescante, seguito dall'iconica Place Masséna e dalle vie dello shopping.",
                 card6_title: "Place Garibaldi e Porto Lympia",
                 card6_desc: "Quartiere vivace amato dai nizzardi per le terrazze soleggiate, i wine bar, gli antiquari e le barche colorate ormeggiate al porto.",
+                rest_favola_title: "La Favola — Cours Saleya",
+                rest_favola_desc: "Un'istituzione di Cours Saleya, celebre per i piatti italiani dalle porzioni spettacolari (pasta, pizze) in un'atmosfera vivace e accogliente.",
+                rest_voglia_title: "La Voglia — Vicino all'Opera",
+                rest_voglia_desc: "Cucina italiana raffinata e gustosa in un ambiente elegante dal design industriale, con una bella terrazza soleggiata a due passi dall'Opera di Nizza.",
+                rest_dipiu_title: "Di Più — Fronte Baie des Anges",
+                rest_dipiu_desc: "Splendida terrazza fronte mare sul Quai des États-Unis, ideale per gustare pizze, frutti di mare e specialità italiane con vista panoramica.",
+                rest_quebec_title: "Le Québec — Zona Pedonale",
+                rest_quebec_desc: "Accogliente brasserie in stile canadese in Rue Masséna, con piatti abbondanti (burger, grigliate, specialità di montagna) in un caldo ambiente in legno.",
                 sec_practical: "Info pratiche da Rue Benoît Bunico",
                 wifi_title: "Wi-Fi Appartamento",
                 trans_title: "Trasporti (3-6 min)",
@@ -325,6 +483,8 @@
                 hero_title: "Su Estancia Inolvidable en Niza",
                 hero_subtitle: "Todas las actividades, playas, mercados y buenas direcciones calculadas a pie desde la calle Benoît Bunico.",
                 sec_activities: "A pie desde Rue Benoît Bunico",
+                sec_restaurants: "Nuestros Restaurantes Recomendados",
+                btn_map: "Ver ruta a pie en Google Maps",
                 tag_gastronomy: "Gastronomía y Callejuelas",
                 tag_coup_coeur: "Favorito • Pan Bagnat",
                 tag_culture: "Cultura y Mercado",
@@ -332,13 +492,21 @@
                 tag_view: "Panorámica",
                 tag_shopping: "Compras y Parque",
                 tag_port: "Ocio y Puerto",
+                tag_italian_generous: "Italiano y Abundante",
+                tag_italian_chic: "Italiano y Terraza",
+                tag_sea_view: "Vistas al Mar • Italiano",
+                tag_brasserie: "Brasserie y Parrilla",
                 dist_0min: "Aquí mismo (0 min • 50 m)",
                 dist_1min: "1 min a pie (80 m)",
                 dist_2min: "2 min a pie (180 m)",
                 dist_4min: "4 min a pie (350 m)",
                 dist_5min: "5 min a pie (400 m)",
+                dist_5min_450: "5 min a pie (450 m)",
                 dist_6min: "6 min a pie (450 m)",
+                dist_6min_450: "6 min a pie (450 m)",
+                dist_7min_500: "7 min a pie (500 m)",
                 dist_8min: "8 min a pie (650 m)",
+                dist_15min_1km: "15 min a pie (1,1 km)",
                 card4_title: "Corazón del Casco Antiguo y Place Rossetti",
                 card4_desc: "¡Está en pleno centro histórico! Pruebe la socca tradicional, las panisse y los famosos helados artesanales de la Place Rossetti justo al lado.",
                 card_felix_title: "Chez Félix — El auténtico Pan Bagnat",
@@ -353,6 +521,14 @@
                 card5_desc: "El gran parque urbano con su espejo de agua refrescante, seguido de la emblemática Place Masséna y las calles comerciales.",
                 card6_title: "Place Garibaldi y Puerto Lympia",
                 card6_desc: "Barrio animado preferido por los locales por sus terrazas soleadas, bares de vinos, anticuarios y barcos coloridos en el puerto.",
+                rest_favola_title: "La Favola — Cours Saleya",
+                rest_favola_desc: "Una institución del Cours Saleya, famosa por sus platos italianos de proporciones espectaculares (pastas, pizzas) en un ambiente animado y cálido.",
+                rest_voglia_title: "La Voglia — Cerca de la Ópera",
+                rest_voglia_desc: "Cocina italiana refinada y sabrosa en un entorno elegante de diseño industrial, con una hermosa terraza soleada a dos pasos de la Ópera de Niza.",
+                rest_dipiu_title: "Di Più — Frente a la Bahía",
+                rest_dipiu_desc: "Magnífica terraza frente al mar en el Quai des États-Unis, ideal para disfrutar de pizzas, mariscos y especialidades italianas con vistas panorámicas.",
+                rest_quebec_title: "Le Québec — Zona Peatonal",
+                rest_quebec_desc: "Acogedora brasserie de estilo canadiense en la calle Masséna con platos abundantes (hamburguesas, carnes a la brasa) en un cálido ambiente de madera.",
                 sec_practical: "Información práctica desde Rue Benoît Bunico",
                 wifi_title: "Wi-Fi Apartamento",
                 trans_title: "Transporte (3 a 6 min)",
@@ -367,6 +543,8 @@
                 hero_title: "Ihr unvergesslicher Aufenthalt in Nizza",
                 hero_subtitle: "Alle Aktivitäten, Strände, Märkte und Tipps zu Fuß ab der Rue Benoît Bunico berechnet.",
                 sec_activities: "Zu Fuß ab der Rue Benoît Bunico",
+                sec_restaurants: "Unsere Restaurant-Empfehlungen",
+                btn_map: "Fußweg auf Google Maps ansehen",
                 tag_gastronomy: "Gastronomie & Gassen",
                 tag_coup_coeur: "Geheimtipp • Pan Bagnat",
                 tag_culture: "Kultur & Markt",
@@ -374,13 +552,21 @@
                 tag_view: "Panoramablick",
                 tag_shopping: "Shopping & Park",
                 tag_port: "Ausgehen & Hafen",
+                tag_italian_generous: "Italienisch & Reichlich",
+                tag_italian_chic: "Italienisch & Terrasse",
+                tag_sea_view: "Meerblick • Italienisch",
+                tag_brasserie: "Brasserie & Grill",
                 dist_0min: "Direkt vor Ort (0 Min. • 50 m)",
                 dist_1min: "1 Min. zu Fuß (80 m)",
                 dist_2min: "2 Min. zu Fuß (180 m)",
                 dist_4min: "4 Min. zu Fuß (350 m)",
                 dist_5min: "5 Min. zu Fuß (400 m)",
+                dist_5min_450: "5 Min. zu Fuß (450 m)",
                 dist_6min: "6 Min. zu Fuß (450 m)",
+                dist_6min_450: "6 Min. zu Fuß (450 m)",
+                dist_7min_500: "7 Min. zu Fuß (500 m)",
                 dist_8min: "8 Min. zu Fuß (650 m)",
+                dist_15min_1km: "15 Min. zu Fuß (1,1 km)",
                 card4_title: "Herz der Altstadt & Place Rossetti",
                 card4_desc: "Sie wohnen mitten im historischen Zentrum! Probieren Sie traditionelle Socca, Panisse und das berühmte hausgemachte Eis am Place Rossetti gleich nebenan.",
                 card_felix_title: "Chez Félix — Echter Pan Bagnat",
@@ -395,6 +581,14 @@
                 card5_desc: "Der große Stadtpark mit erfrischendem Wasserspiegel, gefolgt vom berühmten Place Masséna und den Einkaufsstraßen.",
                 card6_title: "Place Garibaldi & Hafen Lympia",
                 card6_desc: "Lebendiges Viertel, beliebt bei Einheimischen für sonnige Terrassen, Weinbars, Antiquitätenläden und bunte Boote im Hafen.",
+                rest_favola_title: "La Favola — Cours Saleya",
+                rest_favola_desc: "Eine Institution am Cours Saleya, berühmt für ihre außergewöhnlich großen italienischen Portionen (Pasta, Pizza) in lebhafter, herzlicher Atmosphäre.",
+                rest_voglia_title: "La Voglia — Nahe der Oper",
+                rest_voglia_desc: "Raffinierte italienische Küche in stilvollem Industrial-Design mit schöner Sonnenterrasse nur wenige Schritte von der Oper Nizza entfernt.",
+                rest_dipiu_title: "Di Più — Blick auf die Baie des Anges",
+                rest_dipiu_desc: "Herrliche Terrasse direkt am Meer am Quai des États-Unis, ideal für Pizza, Meeresfrüchte und italienische Spezialitäten mit Panoramablick.",
+                rest_quebec_title: "Le Québec — Fußgängerzone",
+                rest_quebec_desc: "Gemütliche Brasserie mit kanadischem Flair in der Rue Masséna mit herzhaften Gerichten (Burger, Steaks, Bergspezialitäten) in warmem Holzdekor.",
                 sec_practical: "Praktische Infos ab Rue Benoît Bunico",
                 wifi_title: "WLAN Apartment",
                 trans_title: "Verkehrsmittel (3 bis 6 Min.)",
@@ -409,6 +603,8 @@
                 hero_title: "Ваш незабываемый отдых в Ницце",
                 hero_subtitle: "Все развлечения, пляжи, рынки и лучшие места в пешей доступности от улицы Бенуа Бюнико (Rue Benoît Bunico).",
                 sec_activities: "Пешком от Rue Benoît Bunico",
+                sec_restaurants: "Наши любимые рестораны",
+                btn_map: "Пеший маршрут на Google Картах",
                 tag_gastronomy: "Гастрономия и улочки",
                 tag_coup_coeur: "Рекомендуем • Пан-банья",
                 tag_culture: "Культура и рынок",
@@ -416,13 +612,21 @@
                 tag_view: "Панорама",
                 tag_shopping: "Шопинг и парк",
                 tag_port: "Кафе и порт",
+                tag_italian_generous: "Итальянская • Щедрые порции",
+                tag_italian_chic: "Итальянская • Терраса",
+                tag_sea_view: "Вид на море • Итальянская",
+                tag_brasserie: "Брассери и гриль",
                 dist_0min: "На месте (0 мин • 50 м)",
                 dist_1min: "1 мин пешком (80 м)",
                 dist_2min: "2 мин пешком (180 м)",
                 dist_4min: "4 мин пешком (350 м)",
                 dist_5min: "5 мин пешком (400 м)",
+                dist_5min_450: "5 мин пешком (450 м)",
                 dist_6min: "6 мин пешком (450 м)",
+                dist_6min_450: "6 мин пешком (450 м)",
+                dist_7min_500: "7 мин пешком (500 м)",
                 dist_8min: "8 мин пешком (650 м)",
+                dist_15min_1km: "15 мин пешком (1,1 км)",
                 card4_title: "Сердце Старой Ниццы и площадь Россетти",
                 card4_desc: "Вы находитесь в самом центре исторического квартала! Попробуйте традиционную сокку, панисс и знаменитое мороженое на соседней площади Россетти.",
                 card_felix_title: "Chez Félix — Настоящий Пан-банья",
@@ -437,6 +641,14 @@
                 card5_desc: "Большой городской парк с освежающим водным зеркалом, за которым следуют знаменитая площадь Массена и торговые улицы.",
                 card6_title: "Площадь Гарибальди и порт Лимпия",
                 card6_desc: "Оживленный квартал, любимый местными жителями за солнечные террасы, винные бары, антикварные лавки и яркие лодки в порту.",
+                rest_favola_title: "La Favola — Кур Салея",
+                rest_favola_desc: "Легендарное заведение на Кур Салея, знаменитое своими огромными порциями итальянских блюд (паста, пицца) и оживленной радушной атмосферой.",
+                rest_voglia_title: "La Voglia — Рядом с Оперой",
+                rest_voglia_desc: "Изысканная итальянская кухня в стильном интерьере с прекрасной солнечной террасой в двух шагах от Оперного театра Ниццы.",
+                rest_dipiu_title: "Di Più — Напротив Бухты Ангелов",
+                rest_dipiu_desc: "Великолепная терраса с видом на море на набережной Quai des États-Unis — идеальное место для пиццы, морепродуктов и пасты.",
+                rest_quebec_title: "Le Québec — Пешеходная зона",
+                rest_quebec_desc: "Уютная брассери в канадском стиле на улице Массена с сытными блюдами (бургеры, мясо на гриле) и теплым деревянным интерьером.",
                 sec_practical: "Полезная информация от Rue Benoît Bunico",
                 wifi_title: "Wi-Fi в апартаментах",
                 trans_title: "Транспорт (3–6 мин)",
@@ -451,6 +663,8 @@
                 hero_title: "您在尼斯的难忘假期",
                 hero_subtitle: "从 Benoît Bunico 街出发步行可达的所有景点、海滩、集市与地道好去处。",
                 sec_activities: "从 Rue Benoît Bunico 步行距离",
+                sec_restaurants: "精选餐厅与美食推荐",
+                btn_map: "在 Google 地图上查看步行路线",
                 tag_gastronomy: "美食与老街",
                 tag_coup_coeur: "强力推荐 • 尼斯三明治",
                 tag_culture: "文化与集市",
@@ -458,13 +672,21 @@
                 tag_view: "全景风光",
                 tag_shopping: "购物与公园",
                 tag_port: "夜生活与港口",
+                tag_italian_generous: "分量十足意式美食",
+                tag_italian_chic: "精致意餐与露台",
+                tag_sea_view: "海景 • 意大利餐厅",
+                tag_brasserie: "法式小酒馆与烧烤",
                 dist_0min: "就在楼下 (0分钟 • 50米)",
                 dist_1min: "步行 1 分钟 (80米)",
                 dist_2min: "步行 2 分钟 (180米)",
                 dist_4min: "步行 4 分钟 (350米)",
                 dist_5min: "步行 5 分钟 (400米)",
+                dist_5min_450: "步行 5 分钟 (450米)",
                 dist_6min: "步行 6 分钟 (450米)",
+                dist_6min_450: "步行 6 分钟 (450米)",
+                dist_7min_500: "步行 7 分钟 (500米)",
                 dist_8min: "步行 8 分钟 (650米)",
+                dist_15min_1km: "步行 15 分钟 (1.1公里)",
                 card4_title: "老尼斯中心与罗塞蒂广场 (Place Rossetti)",
                 card4_desc: "您正处于历史街区的核心！就在旁边的罗塞蒂广场品尝传统的鹰嘴豆饼 (Socca)、炸面团 (Panisse) 以及著名的手工冰淇淋。",
                 card_felix_title: "Chez Félix — 正宗尼斯 Pan Bagnat 三明治",
@@ -479,6 +701,14 @@
                 card5_desc: "拥有清凉水镜广场的大型城市公园，紧邻标志性的马塞纳广场及主要商业购物街。",
                 card6_title: "加里波第广场与林皮亚港",
                 card6_desc: "深受当地人喜爱的活力街区，拥有阳光露台、葡萄酒吧、古董店以及停泊在港口的彩色传统木船。",
+                rest_favola_title: "La Favola — 萨雷亚集市餐厅",
+                rest_favola_desc: "萨雷亚集市上的知名餐厅，以分量惊人的地道意大利美食（意面、披萨）和热闹温馨的氛围而闻名。",
+                rest_voglia_title: "La Voglia — 尼斯歌剧院旁",
+                rest_voglia_desc: "位于尼斯歌剧院附近，工业风时尚环境搭配阳光露台，提供精致美味的意大利料理。",
+                rest_dipiu_title: "Di Più — 直面天使湾海景",
+                rest_dipiu_desc: "位于美国滨海大道的绝美海景露台餐厅，非常适合一边欣赏天使湾全景，一边享用披萨、海鲜与意式佳肴。",
+                rest_quebec_title: "Le Québec — 步行商业街",
+                rest_quebec_desc: "位于马塞纳步行街的加拿大风情木屋餐厅，氛围温馨，主打丰盛汉堡、烤肉及山间特色美食。",
                 sec_practical: "Rue Benoît Bunico 周边实用信息",
                 wifi_title: "公寓无线网络 (Wi-Fi)",
                 trans_title: "交通出行 (3至6分钟)",
