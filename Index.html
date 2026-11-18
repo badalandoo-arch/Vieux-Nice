@@ -38,6 +38,43 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
+
+        /* Mise en page harmonisée des cartes */
+        main .guide-grid {
+            align-items: stretch;
+            grid-auto-rows: 1fr;
+        }
+        main .guide-grid > .guide-card {
+            height: 100%;
+            min-width: 0;
+            border-radius: 1.15rem;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.045);
+        }
+        main .guide-grid > .guide-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.10);
+        }
+        main .guide-card > div:first-child {
+            flex: 1 1 auto;
+        }
+        main .guide-card > div:first-child > .relative {
+            height: 12rem;
+        }
+        main .guide-card > div:last-child {
+            margin-top: auto;
+        }
+        main .guide-card h3 {
+            line-height: 1.3;
+            min-height: 2.6em;
+        }
+        main .guide-card p {
+            line-height: 1.65;
+        }
+        @media (max-width: 767px) {
+            main .guide-grid { grid-auto-rows: auto; }
+            main .guide-grid > .guide-card { height: auto; }
+            main .guide-card h3 { min-height: 0; }
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-azure-500 selection:text-white">
@@ -88,9 +125,9 @@
                 <i class="fa-solid fa-star text-amber-500 mr-3"></i> <span data-i18n="sec_activities">À pied depuis la rue Benoît Bunico</span>
             </h2>
             
-            <div class="grid md:grid-cols-2 gap-6">
+            <div class="grid md:grid-cols-2 gap-6 guide-grid">
                 <!-- Carte 1 : Ruelles du Vieux Nice -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition flex flex-col group guide-card">
                     <div>
                         <div class="relative h-48 overflow-hidden bg-slate-200">
                             <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQcVfXwmLfzJHcdaXU7-vibWC-5E8pFd6-x-F-HlWH4vPc8zSbISMGwLcNFPB-mzUKDgIZk52g7jy5w_ZE" alt="Place Rossetti, Vieux Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -114,33 +151,8 @@
                     </div>
                 </div>
 
-                <!-- Carte Spécialité : Pan Bagnat chez Félix -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-amber-200 hover:shadow-md transition relative flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-48 overflow-hidden bg-amber-50">
-                            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTvfa2UhfT_PC7xx5tHAV4CHQM433Qz2KXNIoK3TW9b3-s9cykJW1HFmhLlta-rgmlGgNM1zzolUnjR9vA" alt="Pan Bagnat Niçois" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
-                                <i class="fa-solid fa-walking mr-1 text-azure-600"></i> <span data-i18n="dist_1min">1 min à pied (80 m)</span>
-                            </span>
-                        </div>
-                        <div class="p-6 pb-4">
-                            <div class="mb-2.5">
-                                <span class="text-xs font-semibold px-3 py-1 bg-amber-100 text-amber-800 rounded-full" data-i18n="tag_coup_coeur">Coup de cœur • Pan Bagnat</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card_felix_title">Chez Félix — Le vrai Pan Bagnat</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card_felix_desc">À deux pas de l'appartement, ne manquez pas Félix pour déguster un authentique Pan Bagnat niçois généreux et préparé dans les règles de l'art. Idéal à emporter sur la plage !</p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-3 border-t border-amber-100 flex justify-end">
-                        <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+06300+Nice&destination=Chez+Felix+Vieux+Nice,+06300+Nice&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-800 hover:text-amber-900 bg-amber-100/80 hover:bg-amber-200/80 px-3.5 py-2 rounded-xl transition">
-                            <i class="fa-solid fa-diamond-turn-right"></i>
-                            <span data-i18n="btn_maps">Itinéraire Google Maps</span>
-                        </a>
-                    </div>
-                </div>
-
                 <!-- Carte 2 : Cours Saleya -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition flex flex-col group guide-card">
                     <div>
                         <div class="relative h-48 overflow-hidden bg-slate-200">
                             <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTa7ISUM8XFcPxibOqNlC5OnKTidMwWIrTSyEP0MdqM02lRnzzCx2d-TopnNQbc6AvRrnr210l-mEQWBeQ" alt="Marché aux fleurs du Cours Saleya, Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -165,7 +177,7 @@
                 </div>
 
                 <!-- Carte 3 : Promenade des Anglais & Plages -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition flex flex-col group guide-card">
                     <div>
                         <div class="relative h-48 overflow-hidden bg-slate-200">
                             <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTKHZVapf8VRLuFnbf3VUdER9GQ9V4eE_QLPSxUYKF46pYnSO1nikI3wPztE-lwXViV_1tTeqgF_1j1Uug" alt="Chaises bleues sur la Promenade des Anglais, Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -190,7 +202,7 @@
                 </div>
 
                 <!-- Carte 4 : Colline du Château -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition flex flex-col group guide-card">
                     <div>
                         <div class="relative h-48 overflow-hidden bg-slate-200">
                             <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTuw3hBOmUBrsTUFVvkYGwdRWIvAJYKb2gHcQxHaCWjM0y0ydE-jacyFFwR8fnpEvw-sTQzsJeH1fXNuwI" alt="Cascade de la Colline du Château, Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -215,7 +227,7 @@
                 </div>
 
                 <!-- Carte 5 : Place Masséna & Coulée Verte -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition flex flex-col group guide-card">
                     <div>
                         <div class="relative h-48 overflow-hidden bg-slate-200">
                             <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcStCsFdzR-n5gsP9IoKeVElsAKts1AmAAvx6i92TlAWwtbvtTiksB7YnGy6bpzc8wPdvo6cKnDxLTRDHP4" alt="Fontaine du Soleil, Place Masséna, Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -239,21 +251,74 @@
                     </div>
                 </div>
 
+
+
+                <!-- Carte 6 : Galeries Lafayette Nice Masséna -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition flex flex-col group guide-card">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Place_massena_gal_lafay.jpg?width=1200" alt="Façade ocre des Galeries Lafayette Nice Masséna, avenue Jean-Médecin" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-walking mr-1 text-azure-600"></i> <span data-i18n="dist_6min">6 min à pied (450 m)</span>
+                            </span>
+                        </div>
+                        <div class="p-6 pb-4">
+                            <div class="mb-2.5">
+                                <span class="text-xs font-semibold px-3 py-1 bg-purple-50 text-purple-700 rounded-full" data-i18n="tag_shopping">Shopping & Parc</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card7_title">Galeries Lafayette Nice Masséna</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card7_desc">Découvrez la célèbre façade ocre rouge aux volets bleus et aux arcades de style turinois, puis les cinq niveaux de boutiques au cœur du centre-ville.</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex justify-end">
+                        <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+06300+Nice&destination=Galeries+Lafayette,+6+Avenue+Jean+Medecin,+06000+Nice&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-azure-700 hover:text-azure-800 bg-azure-50 hover:bg-azure-100 px-3.5 py-2 rounded-xl transition">
+                            <i class="fa-solid fa-diamond-turn-right"></i>
+                            <span data-i18n="btn_maps">Itinéraire Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Carte 7 : Rue piétonne Masséna -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition flex flex-col group guide-card">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rue_massena_nice_01.jpg?width=1200" alt="Rue Masséna, rue piétonne commerçante de Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-walking mr-1 text-azure-600"></i> <span data-i18n="dist_7min">7 min à pied (550 m)</span>
+                            </span>
+                        </div>
+                        <div class="p-6 pb-4">
+                            <div class="mb-2.5">
+                                <span class="text-xs font-semibold px-3 py-1 bg-azure-50 text-azure-700 rounded-full" data-i18n="tag_pedestrian">Commerces & Terrasses</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card8_title">La rue piétonne — Rue Masséna</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card8_desc">Flânez dans cette rue animée du centre-ville, bordée de boutiques, de cafés et de terrasses, idéale pour une pause shopping ou un verre en plein air.</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex justify-end">
+                        <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+06300+Nice&destination=Rue+Massena,+06000+Nice&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-azure-700 hover:text-azure-800 bg-azure-50 hover:bg-azure-100 px-3.5 py-2 rounded-xl transition">
+                            <i class="fa-solid fa-diamond-turn-right"></i>
+                            <span data-i18n="btn_maps">Itinéraire Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+
                 <!-- Carte 6 : Port Lympia & Place Garibaldi -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition md:col-span-2 flex flex-col justify-between group">
                     <div>
                         <div class="relative h-56 overflow-hidden bg-slate-200">
-                            <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTknQUV_oQCZplY8MTTaA5hxxXunnQ4j6_5ye0HIVib726oAiWAg_6dhO8ERLOr2Vs10DI2DWiMhsd9yvU" alt="Pointus colorés au Port Lympia, Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Place_Garibaldi_-_fa%C3%A7ades.jpg?width=1200" alt="Façades ocre à arcades et place Garibaldi à Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
                                 <i class="fa-solid fa-walking mr-1 text-azure-600"></i> <span data-i18n="dist_8min">8 min à pied (650 m)</span>
                             </span>
                         </div>
+                        <p class="px-4 pt-1 text-[10px] text-slate-400">Photo : dalbera / Wikimedia Commons · CC BY 2.0</p>
                         <div class="p-6 pb-4">
                             <div class="mb-2.5">
                                 <span class="text-xs font-semibold px-3 py-1 bg-rose-50 text-rose-700 rounded-full" data-i18n="tag_port">Sorties & Port</span>
                             </div>
                             <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card6_title">Place Garibaldi & Port Lympia</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card6_desc">Quartier animé prisé des locaux pour ses terrasses ensoleillées, ses bars à vin, ses antiquaires et ses pointus colorés amarrés au port.</p>
+                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card6_desc">Admirez les façades ocre à arcades et la statue de Garibaldi au cœur de cette grande place historique, puis prolongez la balade vers les terrasses et les pointus du Port Lympia.</p>
                         </div>
                     </div>
                     <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex flex-wrap gap-2.5 justify-end">
@@ -276,15 +341,40 @@
                 <h2 class="text-2xl font-bold text-slate-900 flex items-center">
                     <i class="fa-solid fa-utensils text-med-600 mr-3"></i> <span data-i18n="sec_food">Bonnes Tables & Spécialités Niçoises</span>
                 </h2>
-                <p class="text-slate-600 text-sm mt-1" data-i18n="sec_food_sub">Nos adresses incontournables autour de la rue Benoît Bunico pour goûter l'authentique cuisine nissarte et italienne.</p>
+                <p class="text-slate-600 text-sm mt-1" data-i18n="sec_food_sub">Nos adresses incontournables à Nice : cuisine niçoise, italienne et spécialités nord-américaines.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Resto 1 : Chez René Socca -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
+            <div class="grid md:grid-cols-2 gap-6 guide-grid">
+                <!-- Carte Spécialité : Pan Bagnat chez Félix -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-amber-200 hover:shadow-lg transition relative flex flex-col group guide-card">
                     <div>
                         <div class="relative h-48 overflow-hidden bg-amber-50">
-                            <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQcVfXwmLfzJHcdaXU7-vibWC-5E8pFd6-x-F-HlWH4vPc8zSbISMGwLcNFPB-mzUKDgIZk52g7jy5w_ZE" alt="Socca et spécialités niçoises chez René Socca" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <img src="https://nicepresse.com/wp-content/uploads/2023/05/Capture-decran-2023-05-30-a-18.17.47-edited.png" alt="Pan bagnat niçois, spécialité proposée chez Félix" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-walking mr-1 text-azure-600"></i> <span data-i18n="dist_1min">1 min à pied (80 m)</span>
+                            </span>
+                        </div>
+                        <div class="p-6 pb-4">
+                            <div class="mb-2.5">
+                                <span class="text-xs font-semibold px-3 py-1 bg-amber-100 text-amber-800 rounded-full" data-i18n="tag_coup_coeur">Coup de cœur • Pan Bagnat</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="card_felix_title">Chez Félix — Le vrai Pan Bagnat</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="card_felix_desc">À deux pas de l'appartement, ne manquez pas d'aller chez Félix pour déguster un authentique Pan Bagnat niçois généreux et préparé dans les règles de l'art. Idéal à emporter sur la plage !</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-3 border-t border-amber-100 flex justify-end">
+                        <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+06300+Nice&destination=Chez+Felix+Vieux+Nice,+06300+Nice&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-800 hover:text-amber-900 bg-amber-100/80 hover:bg-amber-200/80 px-3.5 py-2 rounded-xl transition">
+                            <i class="fa-solid fa-diamond-turn-right"></i>
+                            <span data-i18n="btn_maps">Itinéraire Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Resto 1 : Chez René Socca -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition flex flex-col group guide-card">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-amber-50">
+                            <img src="https://ytimg.yam.com/images/article/202503/1711205077.jpg" alt="Terrasse et façade rouge de Chez René Socca, Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <span class="absolute top-3 right-3 text-xs font-medium text-med-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
                                 <i class="fa-solid fa-walking mr-1 text-med-600"></i> <span data-i18n="dist_2min_150">2 min à pied (150 m)</span>
                             </span>
@@ -306,10 +396,10 @@
                 </div>
 
                 <!-- Resto 2 : Chez Acchiardo -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition flex flex-col group guide-card">
                     <div>
                         <div class="relative h-48 overflow-hidden bg-slate-200">
-                            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTvfa2UhfT_PC7xx5tHAV4CHQM433Qz2KXNIoK3TW9b3-s9cykJW1HFmhLlta-rgmlGgNM1zzolUnjR9vA" alt="Cuisine traditionnelle niçoise Chez Acchiardo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <img src="https://api.cloudly.space/resize/cropratio/640/640/75/aHR0cHM6Ly9zdGF0aWMuYXBpZGFlLXRvdXJpc21lLmNvbS9maWxlc3RvcmUvb2JqZXRzLXRvdXJpc3RpcXVlcy9pbWFnZXMvOS80OC8zOTY2MTU3Ny5qcGVn/image.webp" alt="Restaurant Acchiardo, façade et terrasse dans le Vieux Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <span class="absolute top-3 right-3 text-xs font-medium text-med-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
                                 <i class="fa-solid fa-walking mr-1 text-med-600"></i> <span data-i18n="dist_1min_90">1 min à pied (90 m)</span>
                             </span>
@@ -331,10 +421,10 @@
                 </div>
 
                 <!-- Resto 3 : Favola -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition flex flex-col group guide-card">
                     <div>
                         <div class="relative h-48 overflow-hidden bg-slate-200">
-                            <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTa7ISUM8XFcPxibOqNlC5OnKTidMwWIrTSyEP0MdqM02lRnzzCx2d-TopnNQbc6AvRrnr210l-mEQWBeQ" alt="Restaurant Favola Vieux Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <img src="https://www.la-favola.com/medias_upload/moxie/OH2_9864-web.jpg" alt="Assiette italienne à La Favola, Cours Saleya, Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <span class="absolute top-3 right-3 text-xs font-medium text-med-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
                                 <i class="fa-solid fa-walking mr-1 text-med-600"></i> <span data-i18n="dist_1min_70">1 min à pied (70 m)</span>
                             </span>
@@ -356,10 +446,10 @@
                 </div>
 
                 <!-- Resto 4 : Di Piu -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition flex flex-col group guide-card">
                     <div>
                         <div class="relative h-48 overflow-hidden bg-slate-200">
-                            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTKHZVapf8VRLuFnbf3VUdER9GQ9V4eE_QLPSxUYKF46pYnSO1nikI3wPztE-lwXViV_1tTeqgF_1j1Uug" alt="Restaurant Di Piu Promenade des Anglais Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <img src="https://cdn.iris-etourism.io/uploads/nice/a43/171-81-29905323.webp" alt="Pizza italienne du restaurant Di Più à Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <span class="absolute top-3 right-3 text-xs font-medium text-med-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
                                 <i class="fa-solid fa-walking mr-1 text-med-600"></i> <span data-i18n="dist_3min_250">3 min à pied (250 m)</span>
                             </span>
@@ -381,10 +471,10 @@
                 </div>
 
                 <!-- Resto 5 : Voglia -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group md:col-span-2">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition flex flex-col group guide-card">
                     <div>
                         <div class="relative h-56 overflow-hidden bg-slate-200">
-                            <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTknQUV_oQCZplY8MTTaA5hxxXunnQ4j6_5ye0HIVib726oAiWAg_6dhO8ERLOr2Vs10DI2DWiMhsd9yvU" alt="Restaurant Voglia Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <img src="https://www.lavoglia.com/medias_upload/moxie/photo3.jpg" alt="Pâtes partagées à La Voglia, Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <span class="absolute top-3 right-3 text-xs font-medium text-med-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
                                 <i class="fa-solid fa-walking mr-1 text-med-600"></i> <span data-i18n="dist_4min_300">4 min à pied (300 m)</span>
                             </span>
@@ -404,97 +494,98 @@
                         </a>
                     </div>
                 </div>
+                <!-- Resto 6 : Le Québec -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-lg transition flex flex-col group guide-card">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-200">
+                            <img src="https://www.brasserie-quebec-nice.com/uploads/media/brasserie-quebec-nice-101126.jpg" alt="Terrasse du restaurant Le Québec, rue Masséna à Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 text-xs font-medium text-med-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+                                <i class="fa-solid fa-utensils mr-1 text-med-600"></i> <span data-i18n="tag_quebec">Pizzeria & steak house • Spécialités nord-américaines</span>
+                            </span>
+                        </div>
+                        <div class="p-6 pb-4">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="resto6_title">Le Québec — Pizzeria & steak house</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="resto6_desc">Institution niçoise depuis 1969, Le Québec propose poutine québécoise, pizzas, burgers, bagels, viandes grillées et desserts maison, dans une ambiance conviviale rue Masséna.</p>
+                            <p class="text-slate-500 text-xs mt-3">43 rue Masséna, 06000 Nice · 04 93 87 84 21</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex flex-wrap gap-2 justify-end">
+                        <a href="https://www.brasserie-quebec-nice.com/fr/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-med-800 hover:text-med-900 bg-med-100/80 hover:bg-med-200/80 px-3.5 py-2 rounded-xl transition">
+                            <i class="fa-solid fa-globe"></i> <span data-i18n="btn_official_site">Site officiel</span>
+                        </a>
+                        <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+06300+Nice&destination=43+Rue+Massena,+06000+Nice&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-med-800 hover:text-med-900 bg-med-100/80 hover:bg-med-200/80 px-3.5 py-2 rounded-xl transition">
+                            <i class="fa-solid fa-diamond-turn-right"></i> <span data-i18n="btn_maps">Itinéraire Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- SECTION ÉVÉNEMENTS DU MOIS : DE MENTON À CANNES -->
-        <section>
-            <div class="mb-6">
-                <h2 class="text-2xl font-bold text-slate-900 flex items-center">
-                    <i class="fa-solid fa-calendar-days text-azure-600 mr-3"></i> <span data-i18n="sec_events">Agenda & Activités du Mois (De Menton à Cannes)</span>
-                </h2>
-                <p class="text-slate-600 text-sm mt-1" data-i18n="sec_events_sub">Profitez de votre séjour pour explorer les incontournables de la Côte d'Azur accessibles facilement depuis le Vieux Nice.</p>
+       
+		<!-- SECTION AGENDA & ACTIVITÉS DU MOIS (NICE À GRASSE) -->
+<section id="agenda-section" class="space-y-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-azure-600 bg-azure-50 px-3 py-1 rounded-full">
+                Côte d'Azur • De Nice jusqu'à Grasse
+            </span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2 flex items-center">
+                <i class="fa-solid fa-calendar-days text-azure-600 mr-3"></i>
+                <span data-i18n="sec_agenda">Agenda & Activités du Mois</span>
+            </h2>
+        </div>
+        <!-- Sélecteur manuel optionnel pour explorer d'autres mois -->
+        <div class="flex items-center gap-2">
+            <label for="month-selector" class="text-xs font-medium text-slate-500">Mois affiché :</label>
+            <select id="month-selector" onchange="renderMonthlyEvents(parseInt(this.value))" class="bg-white border border-slate-200 text-slate-700 text-sm rounded-xl px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-azure-500">
+                <option value="0">Janvier</option>
+                <option value="1">Février</option>
+                <option value="2">Mars</option>
+                <option value="3">Avril</option>
+                <option value="4">Mai</option>
+                <option value="5">Juin</option>
+                <option value="6">Juillet</option>
+                <option value="7">Août</option>
+                <option value="8">Septembre</option>
+                <option value="9">Octobre</option>
+                <option value="10">Novembre</option>
+                <option value="11">Décembre</option>
+            </select>
+        </div>
+        <a href="https://www.explorenicecotedazur.com/evenements/agenda-de-tous-les-evenements/" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 bg-amber-400 text-slate-900 font-semibold text-sm px-4 py-2 rounded-xl shadow hover:bg-amber-300 transition">
+            <i class="fa-solid fa-calendar-days"></i> Voir l’agenda en direct
+        </a>
+
+    </div>
+
+    <!-- SOUS-SECTION DYNAMIQUE : FESTIVALS & ÉVÉNEMENTS DU MOIS EN COURS -->
+    <div class="bg-gradient-to-br from-slate-900 via-azure-900 to-slate-800 rounded-3xl p-6 md:p-8 text-white shadow-lg relative overflow-hidden">
+        <div class="relative z-10">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-6">
+                <div class="flex items-center gap-3">
+                    <span class="flex h-3 w-3 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+                    </span>
+                    <h3 class="text-xl md:text-2xl font-bold">
+                        À l'affiche en <span id="current-month-name" class="text-amber-400 underline decoration-amber-400/40 underline-offset-4">...</span>
+                    </h3>
+                </div>
+                <span class="text-xs bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-azure-200 border border-white/10">
+                    De Nice à Grasse
+                </span>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Événement 1 : Menton -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-48 overflow-hidden bg-slate-200">
-                            <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQcVfXwmLfzJHcdaXU7-vibWC-5E8pFd6-x-F-HlWH4vPc8zSbISMGwLcNFPB-mzUKDgIZk52g7jy5w_ZE" alt="Menton Côte d'Azur" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
-                                <i class="fa-solid fa-train mr-1 text-azure-600"></i> <span data-i18n="ev_train_menton">TER ~35 min depuis Nice</span>
-                            </span>
-                        </div>
-                        <div class="p-6 pb-4">
-                            <div class="mb-2.5">
-                                <span class="text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-700 rounded-full" data-i18n="tag_menton">La Cité du Citron • Est</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="ev1_title">Échappée à Menton & Jardins</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="ev1_desc">Explorez la vieille ville aux façades colorées, flânez le long du nouveau port et visitez les somptueux jardins botaniques (Serre de la Madone, Val Rahmeh) surplombant la mer.</p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex justify-end">
-                        <a href="https://www.google.com/maps/dir/?api=1&origin=Gare+de+Nice-Ville&destination=Menton,+France&travelmode=transit" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-azure-700 hover:text-azure-800 bg-azure-50 hover:bg-azure-100 px-3.5 py-2 rounded-xl transition">
-                            <i class="fa-solid fa-diamond-turn-right"></i>
-                            <span data-i18n="btn_maps">Itinéraire Google Maps</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Événement 2 : Nice -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-48 overflow-hidden bg-slate-200">
-                            <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTa7ISUM8XFcPxibOqNlC5OnKTidMwWIrTSyEP0MdqM02lRnzzCx2d-TopnNQbc6AvRrnr210l-mEQWBeQ" alt="Musées et expositions Nice" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
-                                <i class="fa-solid fa-tram mr-1 text-azure-600"></i> <span data-i18n="ev_tram_nice">Sur place & Tram L1/L2</span>
-                            </span>
-                        </div>
-                        <div class="p-6 pb-4">
-                            <div class="mb-2.5">
-                                <span class="text-xs font-semibold px-3 py-1 bg-purple-50 text-purple-700 rounded-full" data-i18n="tag_nice">Culture & Expositions • Nice</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="ev2_title">Musées & Opéra de Nice</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="ev2_desc">Profitez des expositions temporaires aux musées Matisse et Chagall, ou assistez à une représentation à l'Opéra de Nice situé à quelques minutes à pied de l'appartement.</p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex justify-end">
-                        <a href="https://www.google.com/maps/dir/?api=1&origin=Rue+Beno%C3%AEt+Bunico,+06300+Nice&destination=Opera+de+Nice,+06300+Nice&travelmode=walking" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-azure-700 hover:text-azure-800 bg-azure-50 hover:bg-azure-100 px-3.5 py-2 rounded-xl transition">
-                            <i class="fa-solid fa-diamond-turn-right"></i>
-                            <span data-i18n="btn_maps">Itinéraire Google Maps</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Événement 3 : Cannes -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between group">
-                    <div>
-                        <div class="relative h-48 overflow-hidden bg-slate-200">
-                            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTKHZVapf8VRLuFnbf3VUdER9GQ9V4eE_QLPSxUYKF46pYnSO1nikI3wPztE-lwXViV_1tTeqgF_1j1Uug" alt="La Croisette Cannes" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 right-3 text-xs font-medium text-azure-800 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
-                                <i class="fa-solid fa-train mr-1 text-azure-600"></i> <span data-i18n="ev_train_cannes">TER ~30 min depuis Nice</span>
-                            </span>
-                        </div>
-                        <div class="p-6 pb-4">
-                            <div class="mb-2.5">
-                                <span class="text-xs font-semibold px-3 py-1 bg-rose-50 text-rose-700 rounded-full" data-i18n="tag_cannes">La Croisette & Îles de Lérins • Ouest</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="ev3_title">Cannes & Échappée Insulaire</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed" data-i18n="ev3_desc">Marchez sur les pas des stars le long de la Croisette, visitez le Suquet, puis prenez une navette maritime express vers l'île Sainte-Marguerite et son calme absolu.</p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex justify-end">
-                        <a href="https://www.google.com/maps/dir/?api=1&origin=Gare+de+Nice-Ville&destination=Cannes,+France&travelmode=transit" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-azure-700 hover:text-azure-800 bg-azure-50 hover:bg-azure-100 px-3.5 py-2 rounded-xl transition">
-                            <i class="fa-solid fa-diamond-turn-right"></i>
-                            <span data-i18n="btn_maps">Itinéraire Google Maps</span>
-                        </a>
-                    </div>
-                </div>
+            <!-- Conteneur rempli automatiquement par JavaScript selon le mois -->
+            <div id="monthly-events-grid" class="grid md:grid-cols-3 gap-4 guide-grid">
+                <!-- Les cartes du mois en cours s'injectent ici -->
             </div>
-        </section>
+        </div>
+    </div>
 
-        <!-- SECTION INFOS PRATIQUES -->
+           <!-- SECTION INFOS PRATIQUES -->
         <section class="bg-azure-900 text-white rounded-3xl p-8 shadow-lg">
             <h2 class="text-2xl font-bold mb-4 flex items-center">
                 <i class="fa-solid fa-circle-info text-azure-400 mr-3"></i> <span data-i18n="sec_practical">Infos pratiques depuis la rue Benoît Bunico</span>
@@ -571,9 +662,15 @@
                 card5_title: "Place Masséna & Promenade du Paillon",
                 card5_desc: "Le grand parc urbain avec son miroir d'eau rafraîchissant, suivi de l'emblématique Place Masséna et des rues commerçantes (avenue Jean Médecin).",
                 card6_title: "Place Garibaldi & Port Lympia",
-                card6_desc: "Quartier animé prisé des locaux pour ses terrasses ensoleillées, ses bars à vin, ses antiquaires et ses pointus colorés amarrés au port.",
+                card6_desc: "Admirez les façades ocre à arcades et la statue de Garibaldi au cœur de cette grande place historique, puis prolongez la balade vers les terrasses et les pointus du Port Lympia.",
+                dist_7min: "7 min à pied (550 m)",
+                tag_pedestrian: "Commerces & Terrasses",
+                card7_title: "Galeries Lafayette Nice Masséna",
+                card7_desc: "Découvrez la célèbre façade ocre rouge aux volets bleus et aux arcades de style turinois, puis les cinq niveaux de boutiques au cœur du centre-ville.",
+                card8_title: "La rue piétonne — Rue Masséna",
+                card8_desc: "Flânez dans cette rue animée du centre-ville, bordée de boutiques, de cafés et de terrasses, idéale pour une pause shopping ou un verre en plein air.",
                 sec_food: "Bonnes Tables & Spécialités Niçoises",
-                sec_food_sub: "Nos adresses incontournables autour de la rue Benoît Bunico pour goûter l'authentique cuisine nissarte et italienne.",
+                sec_food_sub: "Nos adresses incontournables à Nice : cuisine niçoise, italienne et spécialités nord-américaines.",
                 dist_1min_70: "1 min à pied (70 m)",
                 dist_1min_90: "1 min à pied (90 m)",
                 dist_2min_150: "2 min à pied (150 m)",
@@ -594,7 +691,11 @@
                 resto4_desc: "Situé juste en bas du Cours Saleya face à la Baie des Anges. Une immense terrasse ensoleillée idéale pour déguster de généreuses pizzas au feu de bois, des salades et des antipasti avec vue sur la Méditerranée.",
                 resto5_title: "Voglia — Cours Saleya",
                 resto5_desc: "Une adresse incontournable et animée sur le Cours Saleya. Ambiance chaleureuse, service dynamique et carte savoureuse proposant de superbes assiettes de pâtes, viandes et poissons frais.",
-                sec_events: "Agenda & Activités du Mois (De Menton à Cannes)",
+                tag_quebec: "Pizzeria & steak house • Spécialités nord-américaines",
+                resto6_title: "Le Québec — Pizzeria & steak house",
+                resto6_desc: "Institution niçoise depuis 1969, Le Québec propose poutine québécoise, pizzas, burgers, bagels, viandes grillées et desserts maison, dans une ambiance conviviale rue Masséna.",
+                btn_official_site: "Site officiel",
+                sec_events: "Agenda & Activités du Mois (De Menton à Grasse)",
                 sec_events_sub: "Profitez de votre séjour pour explorer les incontournables de la Côte d'Azur accessibles facilement depuis le Vieux Nice.",
                 ev_train_menton: "TER ~35 min depuis Nice",
                 ev_tram_nice: "Sur place & Tram L1/L2",
@@ -653,7 +754,13 @@
                 card5_title: "Place Masséna & Promenade du Paillon",
                 card5_desc: "The large urban park with its refreshing water mirror, followed by iconic Place Masséna and main shopping streets (Avenue Jean Médecin).",
                 card6_title: "Place Garibaldi & Port Lympia",
-                card6_desc: "Lively neighborhood loved by locals for its sunny terraces, wine bars, antique shops, and colorful traditional boats moored in the port.",
+                card6_desc: "Admire the ochre arcaded façades and Garibaldi statue in this historic square, then continue towards the terraces and colourful traditional boats of Port Lympia.",
+                dist_7min: "7 min walk (550 m)",
+                tag_pedestrian: "Shops & terraces",
+                card7_title: "Galeries Lafayette Nice Masséna",
+                card7_desc: "Admire the famous red-ochre façade, blue shutters and Turin-style arcades, then explore five floors of shops in the heart of the city.",
+                card8_title: "The pedestrian street — Rue Masséna",
+                card8_desc: "Stroll along this lively city-centre street lined with shops, cafés and terraces, perfect for shopping or an outdoor drink.",
                 sec_food: "Best Restaurants & Niçois Specialties",
                 sec_food_sub: "Our must-try spots around Rue Benoît Bunico to taste authentic local and Italian cuisine.",
                 dist_1min_70: "1 min walk (70 m)",
@@ -676,6 +783,10 @@
                 resto4_desc: "Located right at the bottom of Cours Saleya facing the Baie des Anges. A huge sunny terrace ideal for wood-fired pizzas, salads, and antipasti with a view of the Mediterranean.",
                 resto5_title: "Voglia — Cours Saleya",
                 resto5_desc: "A lively and must-visit spot on Cours Saleya. Warm atmosphere, dynamic service, and a delicious menu featuring great pasta, meat, and fresh fish dishes.",
+                tag_quebec: "Pizzeria & steakhouse • North American specialties",
+                resto6_title: "Le Québec — Pizzeria & steakhouse",
+                resto6_desc: "A Nice institution since 1969, Le Québec serves Quebec-style poutine, pizzas, burgers, bagels, grilled meats and homemade desserts in a friendly setting on Rue Masséna.",
+                btn_official_site: "Official website",
                 sec_events: "Agenda & Activities of the Month (From Menton to Cannes)",
                 sec_events_sub: "Make the most of your stay by exploring the highlights of the French Riviera, easily accessible from Old Nice.",
                 ev_train_menton: "TER ~35 min from Nice",
@@ -735,7 +846,13 @@
                 card5_title: "Place Masséna e Promenade du Paillon",
                 card5_desc: "Il grande parco urbano con il suo specchio d'acqua rinfrescante, seguito dall'iconica Place Masséna e dalle vie dello shopping.",
                 card6_title: "Place Garibaldi e Porto Lympia",
-                card6_desc: "Quartiere vivace amato dai nizzardi per le terrazze soleggiate, i wine bar, gli antiquari e le barche colorate ormeggiate al porto.",
+                card6_desc: "Ammirate le facciate ocra con portici e la statua di Garibaldi in questa storica piazza, poi proseguite verso le terrazze e le barche tradizionali del Port Lympia.",
+                dist_7min: "7 min a piedi (550 m)",
+                tag_pedestrian: "Negozi e terrazze",
+                card7_title: "Galeries Lafayette Nice Masséna",
+                card7_desc: "Ammirate la celebre facciata ocra rossa con persiane blu e arcate in stile torinese, poi scoprite i cinque piani di negozi nel centro città.",
+                card8_title: "La via pedonale — Rue Masséna",
+                card8_desc: "Passeggiate in questa vivace via del centro, fiancheggiata da negozi, caffè e terrazze, ideale per lo shopping o una pausa all’aperto.",
                 sec_food: "Ristoranti Tipici e Specialità Nizzarde",
                 sec_food_sub: "I nostri indirizzi imperdibili intorno a Rue Benoît Bunico per gustare l'autentica cucina locale e italiana.",
                 dist_1min_70: "1 min a piedi (70 m)",
@@ -758,6 +875,10 @@
                 resto4_desc: "Situato proprio in fondo a Cours Saleya di fronte alla Baie des Anges. Una grande terrazza soleggiata ideale per pizze cotte a legna e piatti con vista sul mare.",
                 resto5_title: "Voglia — Cours Saleya",
                 resto5_desc: "Un indirizzo vivace e imperdibile su Cours Saleya. Atmosfera calorosa, servizio dinamico e menu gustoso con ottimi piatti di pasta, carne e pesce fresco.",
+                tag_quebec: "Pizzeria & steak house • Specialità nordamericane",
+                resto6_title: "Le Québec — Pizzeria & steak house",
+                resto6_desc: "Un’istituzione di Nizza dal 1969: Le Québec propone poutine del Québec, pizze, hamburger, bagel, carni alla griglia e dolci fatti in casa, in un’atmosfera conviviale in rue Masséna.",
+                btn_official_site: "Sito ufficiale",
                 sec_events: "Agenda ed Eventi del Mese (Da Mentone a Cannes)",
                 sec_events_sub: "Approfitta del soggiorno per esplorare le meraviglie della Costa Azzurra, facilmente raggiungibili dalla Vecchia Nizza.",
                 ev_train_menton: "TER ~35 min da Nizza",
@@ -817,7 +938,13 @@
                 card5_title: "Place Masséna y Promenade du Paillon",
                 card5_desc: "El gran parque urbano con su espejo de agua refrescante, seguido de la emblemática Place Masséna y las calles comerciales.",
                 card6_title: "Place Garibaldi y Puerto Lympia",
-                card6_desc: "Barrio animado preferido por los locales por sus terrazas soleadas, bares de vinos, anticuarios y barcos coloridos en el puerto.",
+                card6_desc: "Admire las fachadas ocres con arcadas y la estatua de Garibaldi en esta plaza histórica, y continúe hacia las terrazas y los barcos tradicionales del Port Lympia.",
+                dist_7min: "7 min a pie (550 m)",
+                tag_pedestrian: "Tiendas y terrazas",
+                card7_title: "Galeries Lafayette Nice Masséna",
+                card7_desc: "Admire la famosa fachada de ocre rojo, las contraventanas azules y las arcadas de estilo turinés, y descubra sus cinco plantas de tiendas en el centro.",
+                card8_title: "La calle peatonal — Rue Masséna",
+                card8_desc: "Pasee por esta animada calle del centro, llena de tiendas, cafés y terrazas, ideal para ir de compras o tomar algo al aire libre.",
                 sec_food: "Buenos Restaurantes y Especialidades",
                 sec_food_sub: "Nuestras direcciones imprescindibles alrededor de Rue Benoît Bunico para probar la auténtica cocina local e italiana.",
                 dist_1min_70: "1 min a pie (70 m)",
@@ -840,6 +967,10 @@
                 resto4_desc: "Situado justo al final de Cours Saleya frente a la Bahía de los Ángeles. Una enorme terraza soleada ideal para pizzas al horno de leña y pasta con vistas al Mediterráneo.",
                 resto5_title: "Voglia — Cours Saleya",
                 resto5_desc: "Un lugar animado e imprescindible en Cours Saleya. Ambiente cálido, servicio dinámico y un menú sabroso con estupendos platos de pasta, carnes y pescados frescos.",
+                tag_quebec: "Pizzería y steak house • Especialidades norteamericanas",
+                resto6_title: "Le Québec — Pizzería y steak house",
+                resto6_desc: "Un clásico de Niza desde 1969: Le Québec ofrece poutine quebequense, pizzas, hamburguesas, bagels, carnes a la parrilla y postres caseros en un ambiente acogedor en la rue Masséna.",
+                btn_official_site: "Sitio oficial",
                 sec_events: "Agenda y Actividades del Mes (De Menton a Cannes)",
                 sec_events_sub: "Aproveche su estancia para explorar los lugares más destacados de la Costa Azul, fácilmente accesibles desde el Casco Antiguo.",
                 ev_train_menton: "TER ~35 min desde Niza",
@@ -899,7 +1030,13 @@
                 card5_title: "Place Masséna & Promenade du Paillon",
                 card5_desc: "Der große Stadtpark mit erfrischendem Wasserspiegel, gefolgt vom berühmten Place Masséna und den Einkaufsstraßen.",
                 card6_title: "Place Garibaldi & Hafen Lympia",
-                card6_desc: "Lebendiges Viertel, beliebt bei Einheimischen für sonnige Terrassen, Weinbars, Antiquitätenläden und bunte Boote im Hafen.",
+                card6_desc: "Bewundern Sie die ockerfarbenen Arkadenfassaden und die Garibaldi-Statue auf diesem historischen Platz und spazieren Sie anschließend zu den Terrassen und traditionellen Booten im Hafen Port Lympia.",
+                dist_7min: "7 Min. zu Fuß (550 m)",
+                tag_pedestrian: "Geschäfte & Terrassen",
+                card7_title: "Galeries Lafayette Nice Masséna",
+                card7_desc: "Bewundern Sie die berühmte rotockerfarbene Fassade mit blauen Fensterläden und Arkaden im Turiner Stil und entdecken Sie fünf Etagen voller Geschäfte im Stadtzentrum.",
+                card8_title: "Die Fußgängerzone — Rue Masséna",
+                card8_desc: "Bummeln Sie durch diese lebhafte Straße im Stadtzentrum mit Geschäften, Cafés und Terrassen – ideal zum Einkaufen oder für eine Pause im Freien.",
                 sec_food: "Restaurants & Spezialitäten",
                 sec_food_sub: "Unsere kulinarischen Lieblingsadressen rund um die Rue Benoît Bunico für lokale und italienische Küche.",
                 dist_1min_70: "1 Min. zu Fuß (70 m)",
@@ -922,6 +1059,10 @@
                 resto4_desc: "Direkt am Ende des Cours Saleya mit Blick auf die Baie des Anges. Eine riesige sonnige Terrasse, ideal für Holzofenpizzen und Gerichte mit Blick auf das Mittelmeer.",
                 resto5_title: "Voglia — Cours Saleya",
                 resto5_desc: "Ein lebendiger und beliebter Treffpunkt am Cours Saleya. Herzliche Atmosphäre, dynamischer Service und eine schmackhafte Karte mit toller Pasta und frischem Fisch.",
+                tag_quebec: "Pizzeria & Steakhouse • Nordamerikanische Spezialitäten",
+                resto6_title: "Le Québec — Pizzeria & Steakhouse",
+                resto6_desc: "Eine Institution in Nizza seit 1969: Le Québec serviert Poutine nach Québec-Art, Pizza, Burger, Bagels, Grillfleisch und hausgemachte Desserts in gemütlicher Atmosphäre in der Rue Masséna.",
+                btn_official_site: "Offizielle Website",
                 sec_events: "Veranstaltungen & Aktivitäten des Monats (Von Menton bis Cannes)",
                 sec_events_sub: "Nutzen Sie Ihren Aufenthalt, um die Highlights der Côte d'Azur zu erkunden, die von der Altstadt aus leicht erreichbar sind.",
                 ev_train_menton: "TER ~35 Min. ab Nizza",
@@ -981,7 +1122,13 @@
                 card5_title: "Площадь Массена и парк Пайон",
                 card5_desc: "Большой городской парк с освежающим водным зеркалом, за которым следуют знаменитая площадь Массена и торговые улицы.",
                 card6_title: "Площадь Гарибальди и порт Лимпия",
-                card6_desc: "Оживленный квартал, любимый местными жителями за солнечные террасы, винные бары, антикварные лавки и яркие лодки в порту.",
+                card6_desc: "Полюбуйтесь охристыми фасадами с аркадами и статуей Гарибальди на этой исторической площади, а затем прогуляйтесь к террасам и традиционным лодкам порта Лимпия.",
+                dist_7min: "7 минут пешком (550 м)",
+                tag_pedestrian: "Магазины и террасы",
+                card7_title: "Galeries Lafayette Nice Masséna",
+                card7_desc: "Полюбуйтесь знаменитым фасадом охристо-красного цвета с синими ставнями и аркадами в туринском стиле, а затем загляните в пять этажей магазинов в центре города.",
+                card8_title: "Пешеходная улица — Rue Masséna",
+                card8_desc: "Прогуляйтесь по оживлённой улице в центре города с магазинами, кафе и террасами — отличное место для шопинга или отдыха на свежем воздухе.",
                 sec_food: "Лучшие рестораны и специалитеты",
                 sec_food_sub: "Наши любимые заведения рядом с Rue Benoît Bunico, где можно отведать местную и итальянскую кухню.",
                 dist_1min_70: "1 мин пешком (70 м)",
@@ -1004,6 +1151,10 @@
                 resto4_desc: "Расположен в самом низу Кур Салея напротив Бухты Ангелов. Огромная солнечная терраса, идеальная для пиццы на дровах и блюд с видом на Средиземное море.",
                 resto5_title: "Voglia — Кур Салея",
                 resto5_desc: "Оживленное и популярное место на Кур Салея. Теплая атмосфера, динамичное обслуживание и отличное меню с пастой, мясом и свежей рыбой.",
+                tag_quebec: "Пиццерия и стейк-хаус • Североамериканская кухня",
+                resto6_title: "Le Québec — Пиццерия и стейк-хаус",
+                resto6_desc: "Ресторан Le Québec — заведение Ниццы с 1969 года. Здесь подают путин по-квебекски, пиццу, бургеры, бейглы, мясо на гриле и домашние десерты на улице Массена.",
+                btn_official_site: "Официальный сайт",
                 sec_events: "Афиша и события месяца (От Ментона до Канн)",
                 sec_events_sub: "Воспользуйтесь поездкой, чтобы открыть для себя знаковые места Лазурного Берега, легко доступные из Старой Ниццы.",
                 ev_train_menton: "TER ~35 мин от Ниццы",
@@ -1063,7 +1214,13 @@
                 card5_title: "马塞纳广场与帕永绿带公园",
                 card5_desc: "拥有清凉水镜广场的大型城市公园，紧邻标志性的马塞纳广场及主要商业购物街。",
                 card6_title: "加里波第广场与林皮亚港",
-                card6_desc: "深受当地人喜爱的活力街区，拥有阳光露台、葡萄酒吧、古董店以及停泊 en 港口的彩色传统木船。",
+                card6_desc: "欣赏这座历史广场的赭色拱廊立面和加里波第雕像，随后继续前往林匹亚港的露台和传统彩色小船。",
+                dist_7min: "步行7分钟（550米）",
+                tag_pedestrian: "商店与露台",
+                card7_title: "尼斯马塞纳老佛爷百货",
+                card7_desc: "欣赏标志性的红赭色外墙、蓝色百叶窗和都灵风格拱廊，再逛逛市中心五层楼的商店。",
+                card8_title: "步行街 — Rue Masséna",
+                card8_desc: "漫步这条热闹的市中心街道，沿街有商店、咖啡馆和露台，非常适合购物或户外小憩。",
                 sec_food: "精选餐厅与特色美食",
                 sec_food_sub: "Rue Benoît Bunico 周边不容错过的地道尼斯风味与意大利美食小馆。",
                 dist_1min_70: "步行 1 分钟 (70米)",
@@ -1086,6 +1243,10 @@
                 resto4_desc: "位于萨雷亚集市尽头，紧邻天使湾。超大阳光露台，是在地中海美景下享用木火烤炉披萨、沙拉和开胃菜的绝佳去处。",
                 resto5_title: "Voglia — 萨雷亚集市",
                 resto5_desc: "萨雷亚集市上一家极具人气与活力的餐厅。气氛热烈，服务热情，菜单丰富，供应极佳的意面、肉类和新鲜海鲜。",
+                tag_quebec: "披萨店与牛排馆 • 北美风味",
+                resto6_title: "Le Québec — 披萨店与牛排馆",
+                resto6_desc: "Le Québec 是尼斯自 1969 年以来的老牌餐厅，供应魁北克肉汁奶酪薯条、披萨、汉堡、贝果、烤肉和自制甜点，位于 Rue Masséna。",
+                btn_official_site: "官方网站",
                 sec_events: "当月活动指南 (从芒通到戛纳)",
                 sec_events_sub: "充分利用您的假期，去探索蔚蓝海岸的精华风光，从老尼斯出发即可轻松抵达。",
                 ev_train_menton: "乘TER动车自尼斯出发约35分钟",
@@ -1131,6 +1292,98 @@
 
             localStorage.setItem('preferred_lang', lang);
         }
+
+
+        // ===== ACTIVITÉS DU MOIS EN COURS (Nice, Menton, Cannes, Grasse) =====
+        const monthlyEvents = {
+            0: [
+                {city:'Nice', date:'Janvier (dates à confirmer)', title:'Promenade du Paillon & illuminations', desc:'Balade hivernale dans le parc du Paillon et découverte des illuminations du centre-ville.', tag:'Nice • Sur place', icon:'fa-snowflake', map:'https://www.google.com/maps/dir/?api=1&destination=Promenade+du+Paillon+Nice'},
+                {city:'Grasse', date:'Janvier (dates à confirmer)', title:'Ateliers parfum d’hiver', desc:'Visites et ateliers de création parfumée dans les maisons historiques de Grasse.', tag:'Grasse • TER', icon:'fa-spray-can-sparkles', map:'https://www.google.com/maps/dir/?api=1&destination=Grasse+Parfumerie'}
+            ],
+            1: [
+                {city:'Menton', date:'Mi-février (dates à confirmer)', title:'Fête du Citron', desc:'Défilés, sculptures d’agrumes et animations dans la cité du citron.', tag:'Menton • TER', icon:'fa-lemon', map:'https://www.google.com/maps/dir/?api=1&destination=Menton+centre-ville'},
+                {city:'Nice', date:'Février (dates à confirmer)', title:'Carnaval de Nice', desc:'Parades, batailles de fleurs et ambiance festive sur la Promenade des Anglais.', tag:'Nice • Sur place', icon:'fa-mask', map:'https://www.google.com/maps/dir/?api=1&destination=Promenade+des+Anglais+Nice'}
+            ],
+            2: [
+                {city:'Nice', date:'Mars (dates à confirmer)', title:'Printemps des musées', desc:'Expositions temporaires au MAMAC, au musée Matisse et au musée Chagall.', tag:'Nice • Culture', icon:'fa-palette', map:'https://www.google.com/maps/dir/?api=1&destination=Musée+Matisse+Nice'},
+                {city:'Grasse', date:'Mars (dates à confirmer)', title:'Jardins & parfumeries', desc:'Découverte des jardins parfumés et des maisons Fragonard, Molinard et Galimard.', tag:'Grasse • TER', icon:'fa-leaf', map:'https://www.google.com/maps/dir/?api=1&destination=Grasse+Parfumerie'}
+            ],
+            3: [
+                {city:'Cannes', date:'Avril (dates à confirmer)', title:'Îles de Lérins', desc:'Navette maritime vers Sainte-Marguerite et balade sur la Croisette.', tag:'Cannes • TER + bateau', icon:'fa-water', map:'https://www.google.com/maps/dir/?api=1&destination=Îles+de+Lérins+Cannes'},
+                {city:'Grasse', date:'Avril (dates à confirmer)', title:'Jasmin & senteurs de printemps', desc:'Promenade dans la vieille ville et initiation à la parfumerie.', tag:'Grasse • TER', icon:'fa-spa', map:'https://www.google.com/maps/dir/?api=1&destination=Grasse+vieille+ville'}
+            ],
+            4: [
+                {city:'Cannes', date:'Mi-mai (dates à confirmer)', title:'Festival de Cannes', desc:'Ambiance du festival, tapis rouge et projections sur la Croisette.', tag:'Cannes • TER', icon:'fa-film', map:'https://www.google.com/maps/dir/?api=1&destination=Palais+des+Festivals+Cannes'},
+                {city:'Nice', date:'Mi-mai (dates à confirmer)', title:'Nuit des Musées', desc:'Ouvertures exceptionnelles et visites nocturnes des musées niçois.', tag:'Nice • Culture', icon:'fa-moon', map:'https://www.google.com/maps/dir/?api=1&destination=Musée+Chagall+Nice'}
+            ],
+            5: [
+                {city:'Nice', date:'21 juin', title:'Fête de la Musique', desc:'Concerts en plein air dans toute la ville au soir du 21 juin.', tag:'Nice • Sur place', icon:'fa-music', map:'https://www.google.com/maps/dir/?api=1&destination=Place+Masséna+Nice'},
+                {city:'Grasse', date:'Fin juin (dates à confirmer)', title:'Expofleur', desc:'Grande fête des fleurs et des parfums au cœur de Grasse.', tag:'Grasse • TER', icon:'fa-fan', map:'https://www.google.com/maps/dir/?api=1&destination=Grasse+centre-ville'}
+            ],
+            6: [
+                {city:'Nice', date:'14 juillet', title:'Plages & feux d’artifice', desc:'Soirées estivales sur la Promenade des Anglais et feux d’artifice.', tag:'Nice • Mer', icon:'fa-fire', map:'https://www.google.com/maps/dir/?api=1&destination=Promenade+des+Anglais+Nice'},
+                {city:'Grasse', date:'Juillet (dates à confirmer)', title:'Soirées estivales', desc:'Concerts et animations dans la vieille ville de Grasse.', tag:'Grasse • TER', icon:'fa-sun', map:'https://www.google.com/maps/dir/?api=1&destination=Grasse+vieille+ville'}
+            ],
+            7: [
+                {city:'Cannes', date:'Août (dates à confirmer)', title:'Soirées estivales', desc:'Cinéma en plein air, concerts et animations sur la Croisette.', tag:'Cannes • TER', icon:'fa-star', map:'https://www.google.com/maps/dir/?api=1&destination=La+Croisette+Cannes'},
+                {city:'Grasse', date:'Août (dates à confirmer)', title:'Jasmin en fleurs', desc:'Découverte des champs de jasmin et des traditions parfumées.', tag:'Grasse • TER', icon:'fa-seedling', map:'https://www.google.com/maps/dir/?api=1&destination=Grasse+Parfumerie'}
+            ],
+            8: [
+                {city:'Nice', date:'Septembre (dates à confirmer)', title:'Rentrée culturelle', desc:'Nouvelles expositions et saison culturelle dans les musées niçois.', tag:'Nice • Culture', icon:'fa-book', map:'https://www.google.com/maps/dir/?api=1&destination=MAMAC+Nice'},
+                {city:'Grasse', date:'Mi-septembre (dates à confirmer)', title:'Journées du Patrimoine', desc:'Visites exceptionnelles des sites historiques et des parfumeries.', tag:'Grasse • TER', icon:'fa-landmark', map:'https://www.google.com/maps/dir/?api=1&destination=Grasse+centre-ville'}
+            ],
+            9: [
+                {city:'Menton', date:'Octobre (dates à confirmer)', title:'Jardins d’automne', desc:'Balade dans les jardins botaniques et les ruelles colorées de Menton.', tag:'Menton • TER', icon:'fa-tree', map:'https://www.google.com/maps/dir/?api=1&destination=Jardin+Serre+de+la+Madone+Menton'},
+                {city:'Grasse', date:'Octobre (dates à confirmer)', title:'Mois du parfum', desc:'Ateliers et découvertes autour des parfums et des essences.', tag:'Grasse • TER', icon:'fa-spray-can-sparkles', map:'https://www.google.com/maps/dir/?api=1&destination=Grasse+Parfumerie'}
+            ],
+            10: [
+                {city:'Nice', date:'Novembre (dates à confirmer)', title:'Saveurs d’automne', desc:'Marchés et spécialités niçoises de saison dans le Vieux Nice.', tag:'Nice • Gastronomie', icon:'fa-utensils', map:'https://www.google.com/maps/dir/?api=1&destination=Cours+Saleya+Nice'},
+                {city:'Grasse', date:'Novembre (dates à confirmer)', title:'Escapade parfumée', desc:'Visite des parfumeries historiques et de la vieille ville.', tag:'Grasse • TER', icon:'fa-spray-can-sparkles', map:'https://www.google.com/maps/dir/?api=1&destination=Grasse+Parfumerie'}
+            ],
+            11: [
+                {city:'Nice', date:'Décembre (dates à confirmer)', title:'Marché de Noël', desc:'Illuminations, chalets et animations de fin d’année.', tag:'Nice • Sur place', icon:'fa-gift', map:'https://www.google.com/maps/dir/?api=1&destination=Place+Masséna+Nice'},
+                {city:'Grasse', date:'Décembre (dates à confirmer)', title:'Noël à Grasse', desc:'Marché de Noël, illuminations et animations dans la capitale du parfum.', tag:'Grasse • TER', icon:'fa-snowflake', map:'https://www.google.com/maps/dir/?api=1&destination=Grasse+centre-ville'}
+            ]
+        };
+
+        const monthNamesFr = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+
+        function renderMonthlyEvents(monthIndex) {
+            const grid = document.getElementById('monthly-events-grid');
+            const label = document.getElementById('current-month-name');
+            if (!grid) return;
+            const events = monthlyEvents[monthIndex] || [];
+            grid.innerHTML = events.map(ev => `
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/15 hover:bg-white/15 transition flex flex-col">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="w-8 h-8 rounded-full bg-amber-400/20 text-amber-300 flex items-center justify-center">
+                            <i class="fa-solid ${ev.icon}"></i>
+                        </span>
+                        <span class="text-xs font-semibold uppercase tracking-wide text-amber-300">${ev.city}</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-1">${ev.title}</h4>
+                    <p class="text-xs text-amber-200 mb-2"><i class="fa-regular fa-calendar mr-1"></i>${ev.date}</p>
+                    <p class="text-sm text-slate-200 mb-4 flex-1">${ev.desc}</p>
+                    <div class="flex items-center justify-between gap-2">
+                        <span class="inline-block text-xs font-medium bg-white/10 text-white px-3 py-1 rounded-full">${ev.tag}</span>
+                        <a href="${ev.map}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs font-semibold bg-white text-slate-900 px-3 py-1.5 rounded-full hover:bg-amber-300 transition">
+                            <i class="fa-solid fa-diamond-turn-right"></i> Itinéraire
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+            if (label) label.textContent = monthNamesFr[monthIndex];
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const selector = document.getElementById('month-selector');
+            const currentMonth = new Date().getMonth();
+            if (selector) {
+                selector.value = String(currentMonth);
+                selector.addEventListener('change', () => renderMonthlyEvents(parseInt(selector.value)));
+            }
+            renderMonthlyEvents(currentMonth);
+        });
 
         window.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferred_lang');
