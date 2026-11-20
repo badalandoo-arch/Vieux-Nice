@@ -1398,21 +1398,26 @@
                 setLanguage(savedLang);
             }
         });
-    </script>
+ </script>
 <!-- Compteur de visites -->
 <div id="visit-counter" style="position:fixed;bottom:10px;right:10px;font-size:12px;color:#666;">
   Visites : <span id="visit-count">…</span>
 </div>
 
 <script>
-fetch("https://compteur.marc-lapping756.workers.dev")
-  .then(r => r.json())
-  .then(data => {
-    document.getElementById("visit-count").textContent = data.count;
-  })
-  .catch(() => {
-    document.getElementById("visit-count").textContent = "N/A";
-  });
+if (sessionStorage.getItem("vieux_nice_visits")) {
+  document.getElementById("visit-count").textContent = sessionStorage.getItem("vieux_nice_visits");
+} else {
+  fetch("https://compteur.marc-lapping756.workers.dev")
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById("visit-count").textContent = data.count;
+      sessionStorage.setItem("vieux_nice_visits", data.count);
+    })
+    .catch(() => {
+      document.getElementById("visit-count").textContent = "N/A";
+    });
+}
 </script>
 </body>
 </html>
